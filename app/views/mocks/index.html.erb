@@ -1,0 +1,18 @@
+<div>
+  Hello world!
+</div>
+
+<div>
+  <%= form_for @new_mock do |f| %>
+      <%= f.label :statuscode %>:
+      <%= f.text_field :statuscode %><br />
+
+      <%= f.label :contenttype %>:
+      <%= f.text_field :contenttype %><br />
+
+      <%= f.label :body %>:
+      <%= f.text_area :body, cols: 50, rows: 10 %><br />
+
+      <%= f.submit %>
+  <% end %>
+</div>
