@@ -1,9 +1,18 @@
 <div>
   Hello world!
+  <% if flash[:new] %>
+    bla
+  <% end %>
+</div>
+
+<div id="result" data-turbolinks-temporary>
+  <% if flash[:new] %>
+      Created new mock. Send your requests to <%= link_to flash[:new] %>.
+  <% end %>
 </div>
 
 <div>
-  <%= form_for @new_mock do |f| %>
+  <%= form_for @new_mock, :remote => true do |f| %>
       <%= f.label :statuscode %>:
       <%= f.text_field :statuscode %><br />
 
