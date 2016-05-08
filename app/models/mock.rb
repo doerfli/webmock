@@ -1,5 +1,6 @@
 class Mock
   include Mongoid::Document
+  include Mongoid::Timestamps
 
   field :statuscode, type: Numeric, default: "200"
   field :contenttype, type: String, default: "application/json"
