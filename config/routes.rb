@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   resources :mocks
   resources :requests
 
-
   root 'mocks#index'
 end
 
