@@ -9,13 +9,12 @@ class MocksController < ApplicationController
     mock = Mock.new(mock_params)
     mock.id = SecureRandom.uuid
     mock.save
-    flash[:new] = mock
 
-    redirect_to mocks_path, change: ['result']
+    redirect_to mock
   end
 
   def show
-
+    @mock = Mock.find( id: params[:id])
   end
 
   private
