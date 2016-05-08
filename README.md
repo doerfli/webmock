@@ -1,24 +1,5 @@
-# README
+# What's webmock?
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Webmock is going to be a portal to create HTTP service mocks with customizable reponses.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+More documentation will follow soon ...
