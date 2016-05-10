@@ -1,27 +1,31 @@
-<div>
-  Hello world!
-  <% if flash[:new] %>
-    bla
-  <% end %>
+<div class="jumbotron">
+  <h1>HTTP Service mocking made easy</h1>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Create your mock right here and now</h3>
+    </div>
+    <div class="panel-body">
+      <%= form_for @new_mock do |f| %>
+          <div class="form-group">
+            <%= f.label :statuscode %>:
+            <%= f.text_field :statuscode, class: 'form-control' %><br />
+          </div>
+
+          <div class="form-group">
+            <%= f.label :contenttype %>:
+            <%= f.text_field :contenttype, class: 'form-control' %><br />
+          </div>
+
+          <div class="form-group">
+            <%= f.label :body %>:
+            <%= f.text_area :body, class: 'form-control', cols: 50, rows: 10 %><br />
+          </div>
+
+          <%= f.submit :class => 'btn btn-default' %>
+      <% end %>
+    </div>
+  </div>
 </div>
 
-<div id="result" data-turbolinks-temporary>
-  <% if flash[:new] %>
-      Created new mock. Send your requests to <%= link_to flash[:new] %>.
-  <% end %>
-</div>
 
-<div>
-  <%= form_for @new_mock do |f| %>
-      <%= f.label :statuscode %>:
-      <%= f.text_field :statuscode %><br />
-
-      <%= f.label :contenttype %>:
-      <%= f.text_field :contenttype %><br />
-
-      <%= f.label :body %>:
-      <%= f.text_area :body, cols: 50, rows: 10 %><br />
-
-      <%= f.submit %>
-  <% end %>
-</div>

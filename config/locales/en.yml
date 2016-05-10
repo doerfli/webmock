@@ -20,4 +20,18 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  head:
+    title: webmock.io - mocking http services made easy
+  navbar:
+    title: webmock.io
+  mongoid:
+      models:
+        mock: Mock
+      attributes:
+        mock:
+          statuscode: Status Code
+          contenttyoe: Content-Type
+  helpers:
+      submit:
+        mock:
+          create: Create mock now!
