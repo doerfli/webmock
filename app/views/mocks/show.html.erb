@@ -1,5 +1,15 @@
-<div>
-  Statuscode: <%= @mock.statuscode %><br/>
-  Contenttype: <%= @mock.contenttype %><br/>
-  Body: <%= @mock.body %>
+<div class="alert alert-success" role="alert">Mock created successfully! You can now send requests to <%= link_to mocklink_url, mocklink_url, :id => @mock.id, :target => '_blank' %></div>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <dl class="dl-horizontal">
+      <dt><%=t Mock.human_attribute_name(:statuscode) %></dt>
+      <dd><%= @mock.statuscode %></dd>
+      <dt><%=t Mock.human_attribute_name(:contenttype) %></dt>
+      <dd><%= @mock.contenttype %></dd>
+      <dt><%=t Mock.human_attribute_name(:body) %></dt>
+      <dd>
+        <pre><%= html_escape(@mock.body) %></pre>
+      </dd>
+    </dl>
+  </div>
 </div>
