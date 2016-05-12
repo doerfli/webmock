@@ -10,7 +10,8 @@ development:
       # of host:port pairs. (required)
       hosts:
         #- localhost:27017
-        - 192.168.99.100:32768
+        #- 192.168.99.100:32768
+        - <%= ENV['MONGO_PORT_27017_TCP_ADDR'] %>:<%= ENV['MONGO_PORT_27017_TCP_PORT'] %>
       options:
         # Change the default write concern. (default = { w: 1 })
         # write:
@@ -137,7 +138,21 @@ test:
       database: webmock_test
       hosts:
         #- localhost:27017
-        - 192.168.99.100:32768
+        #- 192.168.99.100:32768
+        - <%= ENV['MONGO_PORT_27017_TCP_ADDR'] %>:<%= ENV['MONGO_PORT_27017_TCP_PORT'] %>
+      options:
+        read:
+          mode: :primary
+        max_pool_size: 1
+
+production:
+  clients:
+    default:
+      database: webmock_prod
+      hosts:
+        #- localhost:27017
+        #- 192.168.99.100:32768
+        - <%= ENV['MONGO_PORT_27017_TCP_ADDR'] %>:<%= ENV['MONGO_PORT_27017_TCP_PORT'] %>
       options:
         read:
           mode: :primary
