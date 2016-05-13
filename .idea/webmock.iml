@@ -99,6 +99,8 @@
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
       <envs>
         <env name="RAILS_ENV" value="test" />
+        <env name="MONGO_PORT_27017_TCP_ADDR" value="192.168.99.100" />
+        <env name="MONGO_PORT_27017_TCP_PORT" value="32768" />
       </envs>
       <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
       <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
