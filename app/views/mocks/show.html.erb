@@ -1,4 +1,4 @@
-<div class="alert alert-success" role="alert">Mock created successfully! You can now send requests to <%= link_to mocklink_url, mocklink_url, :id => @mock.id, :target => '_blank' %></div>
+<div class="alert alert-success" role="alert"><%=t '.msgsuccess' %> <%= link_to(mocklink_url, mocklink_url, :id => @mock.id, :target => '_blank') %></div>
 <div class="panel panel-default">
   <div class="panel-body">
     <dl class="dl-horizontal">

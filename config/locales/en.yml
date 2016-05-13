@@ -21,9 +21,18 @@
 
 en:
   head:
-    title: webmock.io - mocking http services made easy
+    title: "webmock.io - mocking http services made easy"
   navbar:
-    title: webmock.io
+    title: "webmock.io"
+    home: "Home"
+    contact: "Contact"
+    about: "About"
+  mocks:
+    index:
+      title: Mocking made easy
+      subtitle: Create your HTTP service mock right here and now
+    show:
+      msgsuccess: Mock created successfully! You can now send requests to #{1}
   mongoid:
       models:
         mock: Mock
