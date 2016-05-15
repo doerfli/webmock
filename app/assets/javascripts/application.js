@@ -14,5 +14,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
-//= require twitter/typeahead.min
+//= require select2
 //= require_tree .
+
+
+// globally set select2 theme to bootstrap
+$.fn.select2.defaults.set("theme", "bootstrap");

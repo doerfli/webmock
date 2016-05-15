@@ -24,7 +24,7 @@
 
             <div class="form-group">
               <%= f.label :contenttype %>:
-              <%= f.text_field :contenttype, class: 'form-control ta_ct', autocomplete: 'off' %><br />
+              <%= f.select :contenttype, Mock::MIME_TYPES, {}, { class: 'form-control ta_ct'} %><br />
             </div>
           </div>
         </div>

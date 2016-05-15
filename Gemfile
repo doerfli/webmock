@@ -33,7 +33,7 @@ gem 'jbuilder', '~> 2.0'
 
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'font-awesome-rails', '~> 4.6.0.0'
-gem 'twitter-typeahead-rails', '~> 0.11.1'
+gem 'select2-rails', '~> 4.0', '>= 4.0.2'
 #gem 'momentjs-rails', '~> 2.10.2'
 #gem 'browser', '~> 0.9.1'
 #gem 'uri-js-rails', '~> 1.14.1'
