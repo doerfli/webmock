@@ -3,24 +3,21 @@ class RequestsController < ApplicationController
   def show
     @mock = Mock.find( id: params[:id])
 
-    case @mock.contetype
+    case @mock.contenttype
       when 'application/json'
         response.content_type = @mock.contenttype
-        render :json => @mock.body, :status => @mock.statuscode
 
-      when 'application/xml'
+      when 'application/xml','text/xml'
         response.content_type = @mock.contenttype
-        render :xml => @mock.body, :status => @mock.statuscode
 
       when 'text/html'
         response.content_type = @mock.contenttype
-        render @mock.body, :status => @mock.statuscode
 
       else
         response.content_type = 'application/json'
-        render :json => @mock.body, :status => @mock.statuscode
     end
 
+    render plain: @mock.body, :status => @mock.statuscode
   end
 
 end
