@@ -9,14 +9,14 @@
   <div class="panel-body">
     <%= form_for @new_mock do |f| %>
         <div class="row">
-          <div class="col-md-8">
+          <div class="col-md-9">
             <div class="form-group">
               <%= f.label :body %>:
               <%= f.text_area :body, class: 'form-control', cols: 50, rows: 10 %><br />
             </div>
-            <%= f.submit :class => 'btn btn-default' %>
+
           </div>
-          <div class="col-md-4">
+          <div class="col-md-3">
             <div class="form-group">
               <%= f.label :statuscode %>:
               <%= f.text_field :statuscode, class: 'form-control' %><br />
@@ -28,7 +28,14 @@
             </div>
           </div>
         </div>
-    <% end %>
+        <div class="row">
+          <div class="col-md-9">
+            <%= f.submit :class => 'btn btn-default' %>
+          </div>
+          <div class="col-md-3">&nbsp;</div>
+        </div>
+
+  <% end %>
   </div>
 </div>
 
