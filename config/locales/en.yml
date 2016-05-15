@@ -44,3 +44,5 @@ en:
       submit:
         mock:
           create: Create mock now!
+  mime:
+    json: application/json
