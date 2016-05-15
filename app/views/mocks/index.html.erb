@@ -1,32 +1,34 @@
 <div class="jumbotron">
   <h1><%=t '.title' %></h1>
 </div>
-<div class="container">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title"><%=t '.subtitle' %></h3>
-    </div>
-    <div class="panel-body">
-      <%= form_for @new_mock do |f| %>
-          <div class="form-group">
-            <%= f.label :statuscode %>:
-            <%= f.text_field :statuscode, class: 'form-control' %><br />
-          </div>
 
-          <div class="form-group">
-            <%= f.label :contenttype %>:
-            <%= f.text_field :contenttype, class: 'form-control' %><br />
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%=t '.subtitle' %></h3>
+  </div>
+  <div class="panel-body">
+    <%= form_for @new_mock do |f| %>
+        <div class="row">
+          <div class="col-md-8">
+            <div class="form-group">
+              <%= f.label :body %>:
+              <%= f.text_area :body, class: 'form-control', cols: 50, rows: 10 %><br />
+            </div>
+            <%= f.submit :class => 'btn btn-default' %>
           </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <%= f.label :statuscode %>:
+              <%= f.text_field :statuscode, class: 'form-control' %><br />
+            </div>
 
-          <div class="form-group">
-            <%= f.label :body %>:
-            <%= f.text_area :body, class: 'form-control', cols: 50, rows: 10 %><br />
+            <div class="form-group">
+              <%= f.label :contenttype %>:
+              <%= f.text_field :contenttype, class: 'form-control' %><br />
+            </div>
           </div>
-
-          <%= f.submit :class => 'btn btn-default' %>
-      <% end %>
-    </div>
+        </div>
+    <% end %>
   </div>
 </div>
-
 
