@@ -1,8 +1,5 @@
-<%= react_component('HelloMessage', name: 'John') %>
-
 <div class="row">
   <div class="col-md-2">
-    <%# TODO only select required fields here %>
     <%= react_component 'HistoryRequests', { data: @mock.mock_requests.order_by(:created_at => 'desc').limit(16).map{|r| r.only_members( :_id, :method, :created_at, :remote_address, :created_at_date, :created_at_time) }} %>
   </div>
   <div class="col-md-8">
