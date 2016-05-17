@@ -1,4 +1,4 @@
-FROM ruby:2.3.0
+FROM ruby:2.3.1
 
 # see update.sh for why all "apt-get install"s have to stay as one long line
 RUN apt-get update && apt-get install -y nodejs # build-essential
