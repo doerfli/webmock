@@ -2,29 +2,8 @@
 
 <div class="row">
   <div class="col-md-2">
-    <h3>History</h3>
-    <div class="history">
-      <% @mock.mock_requests.order_by(:created_at => 'desc').limit(16).each{ |req| %>
-          <div class="request">
-            <div class="row">
-              <div class="col-sm-6">
-                <%= req.method %>
-              </div>
-              <div class="col-sm-6">
-                @<%= req.created_at.strftime '%H:%M:%S' %>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-6">
-                <%= req.remote_address %>
-              </div>
-              <div class="col-sm-6">
-                <%= req.created_at.strftime '%y/%m/%d' %>
-              </div>
-            </div>
-          </div>
-      <% } %>
-    </div>
+    <%# TODO only select required fields here %>
+    <%= react_component 'HistoryRequests', { data: @mock.mock_requests.order_by(:created_at => 'desc').limit(16).map{|r| r.only_members( :_id, :method, :created_at, :remote_address, :created_at_date, :created_at_time) }} %>
   </div>
   <div class="col-md-8">
     <% req = @mock.mock_requests.order_by(:created_at => 'desc').first %>

@@ -1,6 +1,7 @@
 class MockRequest
   include Mongoid::Document
   include Mongoid::Timestamps
+  include InstanceOps
 
   belongs_to :mock, dependent: :destroy
 
@@ -11,4 +12,13 @@ class MockRequest
 
   validates :remote_address, presence: true
   validates :method, presence: true
+
+  def created_at_date
+    created_at.strftime '%y/%m/%d'
+  end
+
+  def created_at_time
+    created_at.strftime '%H:%M:%S'
+  end
+
 end
