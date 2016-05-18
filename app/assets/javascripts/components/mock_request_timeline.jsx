@@ -1,4 +1,4 @@
-var HistoryRequests = React.createClass({
+var MRTimeline = React.createClass({
     getInitialState: function() {
         return { requests: this.props.data };
     },
@@ -7,10 +7,9 @@ var HistoryRequests = React.createClass({
     },
     render: function() {
       return (
-        <div className="history">
-          <h3>History</h3>
+        <div className="timeline">
             {this.state.requests.map(function(request) {
-                return <HistoryRequestsItem key={request._id.$oid} request={request} />
+                return <MRTimelineItem key={request._id.$oid} request={request} />
             }.bind(this))}
         </div>
       )

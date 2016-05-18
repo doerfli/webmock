@@ -1,4 +1,4 @@
-var HistoryRequestsItem = React.createClass({
+var MRTimelineItem = React.createClass({
   render: function() {
     return (
         <div className="request">
