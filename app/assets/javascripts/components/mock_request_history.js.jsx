@@ -11,6 +11,9 @@ var MRHistory = React.createClass({
             current: {}
         };
     },
+    handleRequestClick: function(event, i) {
+        this.setState({current: this.state.requests[i]});
+    },
     render: function() {
         return (
             <div className="history">
@@ -18,7 +21,7 @@ var MRHistory = React.createClass({
                 <div className="row">
                     <div className="col-md-2">
                         <h3>Timeline</h3>
-                        <MRTimeline data={this.state.requests}/>
+                        <MRTimeline data={this.state.requests} onTimelineItemClick={this.handleRequestClick}/>
                     </div>
                     <div className="col-md-8">
                         <h3>Request content</h3>
