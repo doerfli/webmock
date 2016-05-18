@@ -6,7 +6,7 @@ var MRContent = React.createClass({
                     {Object.keys(this.props.data.headers).map(function (key) {
                         var value =  this.props.data.headers[key];
                         return (
-                            <span>
+                            <span key={key}>
                                 <dt>{key}</dt>
                                 <dd>{value}</dd>
                             </span>
