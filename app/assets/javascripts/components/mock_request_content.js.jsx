@@ -45,6 +45,26 @@ var MRContent = React.createClass({
                         )
                     }.bind(this))}
                 </div>
+                <h4>Body</h4>
+                {(() => {
+                    if (this.props.data.body != null && this.props.data.body.length > 0 ) {
+                        return (
+                            <div className="row">
+                                <div className="col-sm-12 body">
+                                    <samp>
+                                        {this.props.data.body}
+                                    </samp>
+                                </div>
+                            </div>
+                        )
+                    } else {
+                        return (
+                            <div className="bodyempty">
+                                Request contained no body data
+                            </div>
+                        )
+                    }
+                })()}
             </div>
         )
     }
