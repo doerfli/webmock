@@ -8,5 +8,21 @@
   .request:hover {
     background-color: $table-bg-hover;
   }
+  .general,
+  .headers {
+    .row {
+      border-top: 1px solid $table-border-color;
+
+      .value {
+        word-wrap: break-word;
+      }
+    }
+    .row:last-child {
+      border-bottom: 1px solid $table-border-color;
+    }
+    .row:nth-child(2n+1) {
+      background-color: $table-bg-accent;
+    }
+  }
 }
 
