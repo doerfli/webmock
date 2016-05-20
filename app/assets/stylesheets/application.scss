@@ -15,15 +15,11 @@
  *= require webfonts
  *= require select2
  *= require select2-bootstrap
- *= require common
  */
 
-$font-family-sans-serif: "Roboto", sans-serif;
-$font-family-serif: "Glegoo";
-$font-family-monospace: "Inconsolata";
-$font-size-base: 14px;
-
+@import "bootstrap_variables";
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "common";
 @import "mocks";
 
