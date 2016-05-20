@@ -1,12 +1,21 @@
 .history {
-  .request {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border-bottom: 1px solid $table-border-color;
-    cursor: pointer;
-  }
-  .request:hover {
-    background-color: $table-bg-hover;
+  .timeline_outer {
+    > h3 {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    .request {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      border-top: 1px solid $table-border-color;
+      cursor: pointer;
+    }
+    .request:last-child {
+      border-bottom: 1px solid $table-border-color;
+    }
+    .request:hover {
+      background-color: $table-bg-hover;
+    }
   }
   .general,
   .headers {

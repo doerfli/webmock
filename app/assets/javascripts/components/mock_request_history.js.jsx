@@ -19,13 +19,19 @@ var MRHistory = React.createClass({
             <div className="history">
                 <h2>History</h2>
                 <div className="row">
-                    <div className="col-md-2">
-                        <h3>Timeline</h3>
+                    <div className="col-md-2 timeline_outer">
+                        <h3 className="panel-title">Timeline</h3>
                         <MRTimeline data={this.state.requests} onTimelineItemClick={this.handleRequestClick}/>
                     </div>
                     <div className="col-md-8">
-                        <h3>Request content</h3>
-                        <MRContent data={this.state.current}/>
+                        <div className="panel panel-default">
+                            <div className="panel-heading">
+                                <h3 className="panel-title">Request content</h3>
+                            </div>
+                            <div className="panel-body">
+                                <MRContent data={this.state.current}/>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
