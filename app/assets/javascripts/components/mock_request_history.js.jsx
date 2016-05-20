@@ -21,6 +21,7 @@ var MRHistory = React.createClass({
                 <div className="row">
                     <div className="col-md-2 timeline_outer">
                         <h3 className="panel-title">Timeline</h3>
+                        <span className="refresh"><i className="fa fa-refresh"></i></span>
                         <MRTimeline data={this.state.requests} onTimelineItemClick={this.handleRequestClick}/>
                     </div>
                     <div className="col-md-8">

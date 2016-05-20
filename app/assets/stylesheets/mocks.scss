@@ -3,6 +3,12 @@
     > h3 {
       padding-top: 10px;
       padding-bottom: 10px;
+      display: inline;
+    }
+    .refresh {
+      float: right;
+      display: inline;
+      cursor: pointer;
     }
     .request {
       padding-top: 5px;
