@@ -15,7 +15,14 @@ var MRHistory = React.createClass({
         this.setState({current: this.state.requests[i]});
     },
     handleRefreshClick: function(event) {
-        // this.setState({requests: []});
+        $.ajax({
+            url: "/mocks/" + this.props.mockid + "/history.json",
+            dataType: 'json',
+            cache: false,
+            success: function(data) {
+                this.setState({requests: data, current: data[0]});
+            }.bind(this)
+        });
     },
     render: function() {
         return (
