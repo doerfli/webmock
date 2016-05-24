@@ -15,6 +15,9 @@
       border-top: 1px solid $table-bg-hover;
       cursor: pointer;
     }
+    .selected {
+      background-color: $table-bg-active;
+    }
     .request:hover {
       background-color: $table-bg-hover;
     }
