@@ -30,6 +30,7 @@ en:
     mock:
       detail: Detail
       history: History
+      new: Create new
   mocks:
     index:
       title: HTTP mocking made easy

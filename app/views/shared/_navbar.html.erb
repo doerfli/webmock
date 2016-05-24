@@ -16,6 +16,7 @@
         <% if (controller_name.eql? 'mocks') && action_name.in?( %w(show history)) %>
             <li class="<%= 'active' if action_name.eql? 'show' %>"><%= link_to t('navbar.mock.detail'), mock_path(@mock) %></li>
             <li class="<%= 'active' if action_name.eql? 'history' %>"><%= link_to t('navbar.mock.history'), history_mock_path(@mock) %></li>
+            <li ><%= link_to t('navbar.mock.new'), root_path %></li>
         <% end %>
       </ul>
     </div><!--/.nav-collapse -->
