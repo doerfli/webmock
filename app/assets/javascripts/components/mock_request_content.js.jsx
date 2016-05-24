@@ -2,69 +2,81 @@ var MRContent = React.createClass({
     render: function() {
         return (
             <div className="content">
-                <h4>General request information</h4>
-                <div className="general table-striped">
-                    <div className="row">
-                        <div className="col-sm-4">
-                            Method
-                        </div>
-                        <div className="col-sm-8">
-                            { this.props.data.method }
-                        </div>
+                <div className="panel panel-default">
+                    <div className="panel-heading">
+                        <h3 className="panel-title">General request information</h3>
                     </div>
-                    <div className="row">
-                        <div className="col-sm-4">
-                            Source IP
-                        </div>
-                        <div className="col-sm-8">
-                            { this.props.data.remote_address }
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-sm-4">
-                            Timestamp
-                        </div>
-                        <div className="col-sm-8">
-                            { this.props.data.created_at_date } { this.props.data.created_at_time }
-                        </div>
-                    </div>
-                </div>
-                <h4>Headers</h4>
-                <div className="headers">
-                    {Object.keys(this.props.data.headers).map(function (key) {
-                        var value =  this.props.data.headers[key];
-                        return (
+                    <div className="general panel-body">
+                        <div className="table-striped">
                             <div className="row">
-                                <div className="col-sm-4 key">
-                                    {key}
+                                <div className="col-sm-4">
+                                    Method
                                 </div>
-                                <div className="col-sm-8 value">
-                                    {value}
+                                <div className="col-sm-8">
+                                    { this.props.data.method }
                                 </div>
                             </div>
-                        )
-                    }.bind(this))}
-                </div>
-                <h4>Body</h4>
-                {(() => {
-                    if (this.props.data.body != null && this.props.data.body.length > 0 ) {
-                        return (
                             <div className="row">
-                                <div className="col-sm-12 body">
+                                <div className="col-sm-4">
+                                    Source IP
+                                </div>
+                                <div className="col-sm-8">
+                                    { this.props.data.remote_address }
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="col-sm-4">
+                                    Timestamp
+                                </div>
+                                <div className="col-sm-8">
+                                    { this.props.data.created_at_date } { this.props.data.created_at_time }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="panel panel-default">
+                    <div className="panel-heading">
+                        <h3 className="panel-title">Headers</h3>
+                    </div>
+                    <div className="headers panel-body">
+                        {Object.keys(this.props.data.headers).map(function (key) {
+                            var value =  this.props.data.headers[key];
+                            return (
+                                <div className="row">
+                                    <div className="col-sm-4 key">
+                                        {key}
+                                    </div>
+                                    <div className="col-sm-8 value">
+                                        {value}
+                                    </div>
+                                </div>
+                            )
+                        }.bind(this))}
+                    </div>
+                </div>
+                <div className="panel panel-default">
+                    <div className="panel-heading">
+                        <h3 className="panel-title">Body</h3>
+                    </div>
+                    <div className="body panel-body">
+                        {(() => {
+                            if (this.props.data.body != null && this.props.data.body.length > 0 ) {
+                                return (
                                     <samp>
                                         {this.props.data.body}
                                     </samp>
-                                </div>
-                            </div>
-                        )
-                    } else {
-                        return (
-                            <div className="bodyempty">
-                                Request contained no body data
-                            </div>
-                        )
-                    }
-                })()}
+                                )
+                            } else {
+                                return (
+                                    <div className="bodyempty">
+                                        Request contained no body data
+                                    </div>
+                                )
+                            }
+                        })()}
+                    </div>
+                </div>
             </div>
         )
     }
