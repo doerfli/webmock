@@ -10,6 +10,7 @@ class MocksController < ApplicationController
     mock.id = SecureRandom.uuid
     mock.save
 
+    flash[:alert_success] = "#{t('.msgsuccess')} #{view_context.link_to(mocklink_url(mock), mocklink_url(mock), { :target => '_blank'})}"
     redirect_to mock
   end
 

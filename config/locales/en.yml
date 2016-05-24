@@ -27,12 +27,16 @@ en:
     home: "Home"
     contact: "Contact"
     about: "About"
+    mock:
+      detail: Detail
+      history: History
   mocks:
     index:
       title: HTTP mocking made easy
       subtitle: Create your HTTP service mock right here and now
     show:
       mock_details: Configuration details
+    create:
       msgsuccess: Mock created successfully! You can now send requests to #{1}
   mongoid:
       models:
