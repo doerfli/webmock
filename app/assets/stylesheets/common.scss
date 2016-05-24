@@ -11,6 +11,16 @@
 // disable border-radius
 .alert,
 .panel,
+.btn,
 pre {
   border-radius: 0px;
 }
+
+.btn {
+  padding: 2px 12px;
+}
+
+body > .container:first-of-type {
+  margin-top: 20px;
+}
+

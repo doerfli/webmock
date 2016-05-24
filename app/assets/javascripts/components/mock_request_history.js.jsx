@@ -27,11 +27,10 @@ var MRHistory = React.createClass({
     render: function() {
         return (
             <div className="history">
-                <h2>History</h2>
                 <div className="row">
                     <div className="col-md-2 timeline_outer">
-                        <h3 className="panel-title">Timeline</h3>
-                        <span className="refresh" onClick={this.handleRefreshClick}><i className="fa fa-refresh"></i></span>
+                        <h3 className="panel-title">Requests</h3>
+                        <button type="button" className="btn btn-default refresh" onClick={this.handleRefreshClick}>Refresh</button>
                         <MRTimeline data={this.state.requests} onTimelineItemClick={this.handleRequestClick}/>
                     </div>
                     <div className="col-md-10">

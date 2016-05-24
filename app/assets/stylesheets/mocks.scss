@@ -2,13 +2,13 @@
   .timeline_outer {
     > h3 {
       padding-top: 10px;
-      padding-bottom: 10px;
       display: inline;
     }
     .refresh {
       float: right;
-      display: inline;
-      cursor: pointer;
+    }
+    .timeline {
+      margin-top: 20px;
     }
     .request {
       padding-top: 5px;
