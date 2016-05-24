@@ -32,6 +32,7 @@ en:
       title: HTTP mocking made easy
       subtitle: Create your HTTP service mock right here and now
     show:
+      mock_details: Configuration details
       msgsuccess: Mock created successfully! You can now send requests to #{1}
   mongoid:
       models:

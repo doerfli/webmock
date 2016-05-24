@@ -1,3 +1,16 @@
 .right {
   text-align: right;
 }
+
+.navbar {
+  margin-bottom: 0px;
+  border: 0px;
+  border-radius: 0px;
+}
+
+// disable border-radius
+.alert,
+.panel,
+pre {
+  border-radius: 0px;
+}

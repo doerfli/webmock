@@ -1,15 +1,24 @@
-<div class="alert alert-success" role="alert"><%=t '.msgsuccess' %> <%= link_to(mocklink_url, mocklink_url, :id => @mock.id, :target => '_blank') %></div>
-<div class="panel panel-default">
-  <div class="panel-body">
-    <dl class="dl-horizontal">
-      <dt><%=t Mock.human_attribute_name(:statuscode) %></dt>
-      <dd><%= @mock.statuscode %></dd>
-      <dt><%=t Mock.human_attribute_name(:contenttype) %></dt>
-      <dd><%= @mock.contenttype %></dd>
-      <dt><%=t Mock.human_attribute_name(:body) %></dt>
-      <dd>
-        <pre><%= html_escape(@mock.body) %></pre>
-      </dd>
-    </dl>
+<div class="container">
+  <div class="alert alert-success" role="alert">
+    <%=t '.msgsuccess' %> <%= link_to(mocklink_url, mocklink_url, :id => @mock.id, :target => '_blank') %>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title"><%=t '.mock_details' %></h3>
+    </div>
+    <div class="panel-body">
+      <dl class="dl-horizontal">
+        <dt><%=t '.mock_history' %></dt>
+        <dd><%= link_to(history_mock_url, history_mock_url(@mock), :id => @mock.id, :target => '_blank') %></dd>
+        <dt><%=t Mock.human_attribute_name(:statuscode) %></dt>
+        <dd><%= @mock.statuscode %></dd>
+        <dt><%=t Mock.human_attribute_name(:contenttype) %></dt>
+        <dd><%= @mock.contenttype %></dd>
+        <dt><%=t Mock.human_attribute_name(:body) %></dt>
+        <dd>
+          <pre><%= html_escape(@mock.body) %></pre>
+        </dd>
+      </dl>
+    </div>
   </div>
 </div>
