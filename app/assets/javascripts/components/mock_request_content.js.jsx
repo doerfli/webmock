@@ -18,6 +18,14 @@ var MRContent = React.createClass({
                             </div>
                             <div className="row">
                                 <div className="col-sm-4">
+                                    Original URL
+                                </div>
+                                <div className="col-sm-8">
+                                    { this.props.data.url }
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="col-sm-4">
                                     Source IP
                                 </div>
                                 <div className="col-sm-8">
@@ -30,6 +38,39 @@ var MRContent = React.createClass({
                                 </div>
                                 <div className="col-sm-8">
                                     { this.props.data.created_at_date } { this.props.data.created_at_time }
+                                </div>
+                            </div>
+                            {(() => {
+                                if ( this.props.data.query_params_as_text != "" ) {
+                                    return (
+                                        <div className="row">
+                                            <div className="col-sm-4">
+                                                Query parameters
+                                            </div>
+                                            <div className="col-sm-8">
+                                                { this.props.data.query_params_as_text.split("\n").map(function(item) {
+                                                    return ( <span>{item} <br/></span> )
+                                                }) }
+                                            </div>
+                                        </div>
+                                    )
+                                }
+                            })()
+                            }
+                            <div className="row">
+                                <div className="col-sm-4">
+                                    Number of headers
+                                </div>
+                                <div className="col-sm-8">
+                                    { Object.keys(this.props.data.headers).length }
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="col-sm-4">
+                                    Body size
+                                </div>
+                                <div className="col-sm-8">
+                                    { this.props.data.body_size } Bytes
                                 </div>
                             </div>
                         </div>

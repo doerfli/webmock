@@ -23,4 +23,22 @@ class Mock
       text/csv
       text/plain
   )
+
+  def latest_requests(num = 16)
+    mock_requests.order_by(:created_at => 'desc').limit(num).map{|r|
+      r.only_members(
+          :_id,
+          :method,
+          :url,
+          :query_params_as_text,
+          :created_at,
+          :remote_address,
+          :created_at_date,
+          :created_at_time,
+          :headers,
+          :body,
+          :body_size,
+      )
+    }
+  end
 end

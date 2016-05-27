@@ -25,4 +25,8 @@ class MockRequest
     created_at.strftime '%H:%M:%S'
   end
 
+  def query_params_as_text
+    return "" if query_params.nil?
+    query_params.map{ |k,v| "#{k}: #{v}"}.join("\n")
+  end
 end

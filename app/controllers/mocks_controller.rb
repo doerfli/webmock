@@ -23,7 +23,7 @@ class MocksController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.json { render :json => @mock.mock_requests.order_by(:created_at => 'desc').limit(16).map{|r| r.only_members( :_id, :method, :created_at, :remote_address, :created_at_date, :created_at_time, :headers, :body) } }
+      format.json { render :json => @mock.latest_requests(16) }
     end
   end
 
