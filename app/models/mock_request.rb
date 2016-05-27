@@ -9,6 +9,10 @@ class MockRequest
   field :method, type: String
   field :headers, type: Hash
   field :body, type: String
+  field :body_size, type: Fixnum
+  field :url, type: String
+  field :query_params, type: Hash
+
 
   validates :remote_address, presence: true
   validates :method, presence: true
