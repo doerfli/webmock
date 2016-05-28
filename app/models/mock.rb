@@ -42,4 +42,8 @@ class Mock
       )
     }
   end
+
+  def remove_empty_headers
+    self.customheaders = self.customheaders.select{ |x| true if !( x[:name].nil? ) && ! ( x[:name].eql?('') ) && ! ( x[:value].nil? ) && ! ( x[:value].eql?('') ) }
+  end
 end

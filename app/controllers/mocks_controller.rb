@@ -8,6 +8,7 @@ class MocksController < ApplicationController
   def create
     mock = Mock.new(mock_params)
     mock.id = SecureRandom.uuid
+    mock.remove_empty_headers
     mock.save
 
     flash[:alert_success] = "#{t('.msgsuccess')} #{view_context.link_to(mocklink_url(mock), mocklink_url(mock), { :target => '_blank'})}"

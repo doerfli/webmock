@@ -13,8 +13,23 @@ var CustomHeaders = React.createClass({
         this.setState({n: this.state.n + 1});
     },
     render: function() {
-        return (
-            <span>
+        if ( this.state.n == 0 ) {
+            return (
+                <span>
+                    <div className="row">
+                     <div className="col-md-12">
+                        <div className="form-group" >
+                            <a onClick={this.increaseHeaders}>
+                                Add a custom header
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </span>
+            )
+        } else {
+            return (
+                <span>
                 {_.times(this.state.n, i =>
                     <div className="row" key={i}>
                         <div className="col-md-4">
@@ -42,6 +57,7 @@ var CustomHeaders = React.createClass({
                     </div>
                 </div>
             </span>
-        )
+            )
+        }
     }
 });
