@@ -30,7 +30,7 @@ class MocksController < ApplicationController
   private
 
     def mock_params
-      params.require(:mock).permit(:statuscode, :contenttype, :body)
+      params.require(:mock).permit(:statuscode, :contenttype, :body, customheaders: [:name, :value])
     end
 
 end

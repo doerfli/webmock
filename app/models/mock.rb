@@ -6,6 +6,7 @@ class Mock
 
   field :statuscode, type: Numeric, default: "200"
   field :contenttype, type: String, default: "application/json"
+  field :customheaders, type: Array
   field :body, type: String, default: ''
 
   validates :statuscode, presence: true
