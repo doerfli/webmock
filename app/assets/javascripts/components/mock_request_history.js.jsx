@@ -30,7 +30,7 @@ var MRHistory = React.createClass({
                 <div className="row">
                     <div className="col-md-2 timeline_outer">
                         <h3 className="panel-title">Requests</h3>
-                        <button type="button" className="btn btn-default refresh" onClick={this.handleRefreshClick}>Refresh</button>
+                        <button type="button" className="btn  btn-info refresh" onClick={this.handleRefreshClick}>Refresh</button>
                         <MRTimeline data={this.state.requests} selectedId={this.state.current._id.$oid} onTimelineItemClick={this.handleRequestClick}/>
                     </div>
                     <div className="col-md-10">

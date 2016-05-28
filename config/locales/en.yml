@@ -46,6 +46,7 @@ en:
         mock:
           statuscode: Status Code
           contenttyoe: Content-Type
+          customheaders: Custom headers
   helpers:
       submit:
         mock:

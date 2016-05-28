@@ -82,7 +82,7 @@ var MRContent = React.createClass({
                     </div>
                     <div className="headers panel-body">
                         {Object.keys(this.props.data.headers).map(function (key) {
-                            var value =  this.props.data.headers[key];
+                            var value = this.props.data.headers[key];
                             return (
                                 <div className="row">
                                     <div className="col-sm-4 key">

@@ -13,6 +13,14 @@
         <dd><%= @mock.statuscode %></dd>
         <dt><%=t Mock.human_attribute_name(:contenttype) %></dt>
         <dd><%= @mock.contenttype %></dd>
+        <% unless @mock.customheaders.nil? %>
+          <dt><%=t Mock.human_attribute_name(:customheaders) %></dt>
+          <dd>
+            <% @mock.customheaders.each{ |h| %>
+              <%= h[:name] %>: <%= h[:value] %><br/>
+            <% } %>
+          </dd>
+        <% end %>
         <dt><%=t Mock.human_attribute_name(:body) %></dt>
         <dd>
           <% if ! @mock.body.empty? %>
