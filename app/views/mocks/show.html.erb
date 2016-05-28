@@ -15,7 +15,11 @@
         <dd><%= @mock.contenttype %></dd>
         <dt><%=t Mock.human_attribute_name(:body) %></dt>
         <dd>
-          <pre><%= html_escape(@mock.body) %></pre>
+          <% if ! @mock.body.empty? %>
+            <pre><%= html_escape(@mock.body) %></pre>
+          <% else %>
+            <pre><i>[No body defined]</i></pre>
+          <% end %>
         </dd>
       </dl>
     </div>
