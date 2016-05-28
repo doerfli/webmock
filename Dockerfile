@@ -19,8 +19,7 @@ RUN MONGO_PORT_27017_TCP_ADDR=localhost MONGO_PORT_27017_TCP_PORT=27017 bundle e
 
 # TODO move this to static file server, e.g. nginx
 ENV RAILS_SERVE_STATIC_FILES true
-# TODO fix this to be dynamic
-ENV SECRET_KEY_BASE aaaaaaaaa
+ENV SECRET_KEY_BASE abcdefgh12345678
 
 # Default command
 CMD ["bundle", "exec", "rails", "server"]

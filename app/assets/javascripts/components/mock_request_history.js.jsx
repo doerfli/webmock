@@ -25,20 +25,42 @@ var MRHistory = React.createClass({
         });
     },
     render: function() {
-        return (
-            <div className="history">
-                <div className="row">
-                    <div className="col-md-2 timeline_outer">
-                        <h3 className="panel-title">Requests</h3>
-                        <button type="button" className="btn  btn-info refresh" onClick={this.handleRefreshClick}>Refresh</button>
-                        <MRTimeline data={this.state.requests} selectedId={this.state.current._id.$oid} onTimelineItemClick={this.handleRequestClick}/>
-                    </div>
-                    <div className="col-md-10">
-                        <MRContent data={this.state.current}/>
+        if ( this.state.requests.length == 0) {
+            return (
+                <div className="history">
+                    <div className="row">
+                        <div className="col-md-2 timeline_outer">
+                            <h3 className="panel-title">Requests</h3>
+                            <button type="button" className="btn  btn-info refresh" onClick={this.handleRefreshClick}>Refresh</button>
+                            <div className="timeline">
+                                <div className="request">
+                                    <i>No requests received yet</i>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-md-10">
+
+                        </div>
                     </div>
                 </div>
-            </div>
-        )
+            )
+        } else {
+            return (
+                <div className="history">
+                    <div className="row">
+                        <div className="col-md-2 timeline_outer">
+                            <h3 className="panel-title">Requests</h3>
+                            <button type="button" className="btn btn-info refresh" onClick={this.handleRefreshClick}>Refresh</button>
+                            <MRTimeline data={this.state.requests} selectedId={this.state.current._id.$oid} onTimelineItemClick={this.handleRequestClick}/>
+                        </div>
+                        <div className="col-md-10">
+                            <MRContent data={this.state.current}/>
+                        </div>
+                    </div>
+                </div>
+            )
+        }
+
     }
 });
 
