@@ -40,6 +40,7 @@ gem 'react-rails', '~> 1.7', '>= 1.7.1'
 #gem 'uri-js-rails', '~> 1.14.1'
 #gem 'handlebars_assets', '~>0.23.0'
 #gem 'quiet_assets'
+gem 'rails-assets-lodash', '~> 4.13.0', source: 'https://rails-assets.org'
 
 
 # Use Capistrano for deployment

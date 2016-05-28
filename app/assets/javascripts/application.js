@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require select2
+//= require lodash
 //= require react
 //= require react_ujs
 //= require components
