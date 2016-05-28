@@ -20,6 +20,13 @@ class MockRequestsController < ApplicationController
     mockreq.save
 
     response.content_type = mock.contenttype
+
+    unless mock.customheaders.nil?
+      mock.customheaders.each{ |h|
+        response.headers[h[:name]] = h[:value]
+      }
+    end
+
     render plain: mock.body, :status => mock.statuscode
   end
 
