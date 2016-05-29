@@ -1,3 +1,2 @@
 #!/bin/bash
-export MONGO_PORT_27017_TCP_ADDR=localhost
-export MONGO_PORT_27017_TCP_PORT=32768
+export DB_HOST=192.168.99.100:32768

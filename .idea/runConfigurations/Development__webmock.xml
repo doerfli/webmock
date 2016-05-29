@@ -8,8 +8,7 @@
     <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="ruby-2.3.1-p112" />
     <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
     <envs>
-      <env name="MONGO_PORT_27017_TCP_ADDR" value="192.168.99.100" />
-      <env name="MONGO_PORT_27017_TCP_PORT" value="32768" />
+      <env name="DB_HOST" value="192.168.99.100:32768" />
     </envs>
     <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
     <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
