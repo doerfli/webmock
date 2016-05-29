@@ -5,6 +5,7 @@ RUN apt-get update && apt-get install -y nodejs # build-essential
 
 ENV HOME /webmock
 ENV RAILS_ENV production
+ENV DB_HOST mongo:27017
 
 WORKDIR $HOME
 
@@ -15,7 +16,7 @@ RUN bundle install --without development test
 
 # Add the app code
 ADD . $HOME
-RUN DB_HOST=localhost:27017 bundle exec rake assets:precompile
+RUN bundle exec rake assets:precompile
 
 # TODO move this to static file server, e.g. nginx
 ENV RAILS_SERVE_STATIC_FILES true
