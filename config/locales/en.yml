@@ -35,6 +35,7 @@ en:
     index:
       title: HTTP mocking made easy
       subtitle: Create your HTTP service mock right here and now
+      reset: Reset
     show:
       mock_details: Configuration details
     create:
