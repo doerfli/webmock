@@ -19,7 +19,7 @@ var CustomHeaders = React.createClass({
                     <div className="row">
                      <div className="col-md-12">
                         <div className="form-group" >
-                            <a onClick={this.increaseHeaders}>
+                            <a onClick={this.increaseHeaders} className="addheader">
                                 Add a custom header
                             </a>
                         </div>
@@ -50,7 +50,7 @@ var CustomHeaders = React.createClass({
                 <div className="row">
                     <div className="col-md-12">
                         <div className="form-group" >
-                            <a onClick={this.increaseHeaders}>
+                            <a onClick={this.increaseHeaders} className="addheader">
                                 Add another header
                             </a>
                         </div>

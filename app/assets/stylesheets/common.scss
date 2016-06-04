@@ -7,10 +7,6 @@ body {
   margin-bottom: 40px;
 }
 
-.right {
-  text-align: right;
-}
-
 .navbar {
   margin-bottom: 0px;
   border: 0px;
@@ -52,5 +48,9 @@ body > .container:first-of-type {
 
   .container {
     text-align: center;
+
+    .footer_icon {
+      color: $navbar-default-bg;
+    }
   }
 }
