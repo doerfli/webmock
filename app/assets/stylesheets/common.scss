@@ -8,6 +8,13 @@
   border-radius: 0px;
 }
 
+@media screen and (min-width: 768px) {
+  .jumbotron {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
 // disable border-radius
 .alert,
 .panel,
