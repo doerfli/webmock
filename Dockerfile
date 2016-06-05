@@ -1,7 +1,8 @@
-FROM ruby:2.3.1
+FROM ruby:2.3.1-alpine
 
-# see update.sh for why all "apt-get install"s have to stay as one long line
-RUN apt-get update && apt-get install -y nodejs # build-essential
+RUN apk update && apk upgrade && \
+    apk add --update nodejs git build-base libxml2-dev libxslt-dev tzdata && \
+    rm -rf /var/cache/apk/*
 
 ENV HOME /webmock
 ENV RAILS_ENV production
@@ -12,6 +13,7 @@ WORKDIR $HOME
 # Install gems
 ADD Gemfile* $HOME/
 RUN gem update bundler
+RUN bundle config build.nokogiri --use-system-libraries
 RUN bundle install --without development test
 
 # Add the app code

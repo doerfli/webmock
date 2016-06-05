@@ -175,6 +175,8 @@
     <orderEntry type="library" scope="PROVIDED" name="bundler (v1.12.4, ruby-2.3.1-p112) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="byebug (v8.2.5, ruby-2.3.1-p112) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coderay (v1.1.1, ruby-2.3.1-p112) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="coffee-rails (v4.1.1, ruby-2.3.1-p112) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="coffee-script (v2.4.1, ruby-2.3.1-p112) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coffee-script-source (v1.10.0, ruby-2.3.1-p112) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="concurrent-ruby (v1.0.2, ruby-2.3.1-p112) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="connection_pool (v2.2.0, ruby-2.3.1-p112) [gem]" level="application" />
