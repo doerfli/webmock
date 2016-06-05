@@ -5,6 +5,8 @@ module ApplicationHelper
       case contenttype
         when 'application/json'
           JSON.pretty_generate JSON.parse body
+        when 'application/xml', 'text/xml'
+          Nokogiri::XML(body).to_xml
         else
           body
       end
