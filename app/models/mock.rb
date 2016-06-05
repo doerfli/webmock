@@ -25,26 +25,12 @@ class Mock
       text/plain
   )
 
-  def latest_requests(num = 16)
-    mock_requests.order_by(:created_at => 'desc').limit(num).map{|r|
-      r.only_members(
-          :_id,
-          :method,
-          :url,
-          :query_params_as_text,
-          :created_at,
-          :remote_address,
-          :created_at_date,
-          :created_at_time,
-          :headers,
-          :body,
-          :body_size,
-      )
-    }
-  end
-
   def remove_empty_headers
     return if self.customheaders.nil?
     self.customheaders = self.customheaders.select{ |x| true if !( x[:name].nil? ) && ! ( x[:name].eql?('') ) && ! ( x[:value].nil? ) && ! ( x[:value].eql?('') ) }
+  end
+
+  def body_pp
+    body_pretty_print
   end
 end

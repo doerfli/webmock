@@ -11,6 +11,7 @@ class MockRequestsController < ApplicationController
         method: request.method,
         # headers sent from client as prefixed with HTTP_ and we only want to store those and remove the HTTP_ for storing
         headers: Hash[request.headers.env.select{|h,_| h =~ /^HTTP_(.+)/ }.map{|k,v| [k.match(/^HTTP_(.+)/)[1],v.to_s]}],
+        contenttype: request.content_type,
         mock: mock,
         body: request.raw_post,
         body_size: request.raw_post.size,

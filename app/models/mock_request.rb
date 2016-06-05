@@ -8,6 +8,7 @@ class MockRequest
   field :remote_address, type: String
   field :method, type: String
   field :headers, type: Hash
+  field :contenttype, type: String
   field :body, type: String
   field :body_size, type: Fixnum
   field :url, type: String

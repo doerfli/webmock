@@ -81,6 +81,14 @@ var MRContent = React.createClass({
                         <h3 className="panel-title">Headers</h3>
                     </div>
                     <div className="headers panel-body">
+                        <div className="row">
+                            <div className="col-sm-4">
+                                CONTENT_TYPE
+                            </div>
+                            <div className="col-sm-8">
+                                { this.props.data.contenttype }
+                            </div>
+                        </div>
                         {Object.keys(this.props.data.headers).map(function (key) {
                             var value = this.props.data.headers[key];
                             return (
@@ -104,9 +112,9 @@ var MRContent = React.createClass({
                         {(() => {
                             if (this.props.data.body != null && this.props.data.body.length > 0 ) {
                                 return (
-                                    <samp>
+                                    <pre>
                                         {this.props.data.body}
-                                    </samp>
+                                    </pre>
                                 )
                             } else {
                                 return (
