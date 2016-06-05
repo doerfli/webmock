@@ -5,6 +5,9 @@ Rails.application.routes.draw do
     member do
       get 'history'
     end
+    collection do
+      get 'search'
+    end
   end
   resources :mock_requests
 

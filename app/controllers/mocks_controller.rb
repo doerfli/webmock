@@ -32,6 +32,10 @@ class MocksController < ApplicationController
     end
   end
 
+  def search
+    raise 'not yet implemented'
+  end
+
   private
 
     def mock_params

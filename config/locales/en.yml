@@ -27,6 +27,7 @@ en:
     home: "Home"
     contact: "Contact"
     about: "About"
+    enter_id: "Enter mock ID ..."
     mock:
       detail: Detail
       history: History

@@ -19,9 +19,9 @@
             <li ><%= link_to t('navbar.mock.new'), root_path %></li>
         <% end %>
       </ul>
-      <form class="navbar-form navbar-right search" role="search">
+      <form action="<%= search_mocks_path %>" class="navbar-form navbar-right search" role="search" method="get">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Enter mock ID ...">
+          <input name="term" type="text" class="form-control" placeholder="<%=t 'navbar.enter_id' %>">
         </div>
       </form>
     </div><!--/.nav-collapse -->
