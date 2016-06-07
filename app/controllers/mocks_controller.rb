@@ -33,7 +33,28 @@ class MocksController < ApplicationController
   end
 
   def search
-    raise 'not yet implemented'
+    mock = nil
+    mocks = nil
+
+    begin
+      mock = Mock.find( id: params[:term])
+    rescue Mongoid::Errors::DocumentNotFound
+      # all good, no match found
+      logger.debug 'no match found'
+    end
+
+    unless mock
+      mocks = Mock.where( id: Regexp.new(params[:term]))
+      logger.debug "found #{mocks.size} matches"
+      mock = mocks.size == 1 ? mocks[0] : nil
+    end
+
+    if mock
+      redirect_to mock
+    else
+      flash[:alert_warning] = t('error.search_no_match', term: params[:term])
+      redirect_to root_url
+    end
   end
 
   private

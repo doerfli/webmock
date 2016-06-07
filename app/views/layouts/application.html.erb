@@ -22,6 +22,14 @@
       </div>
     <% end %>
 
+    <% if flash[:alert_warning] %>
+      <div class="container">
+        <div class="alert alert-warning" role="alert">
+          <%= flash[:alert_warning].html_safe %>
+        </div>
+      </div>
+    <% end %>
+
     <%= yield %>
 
     <%= render :partial => 'shared/footer' %>

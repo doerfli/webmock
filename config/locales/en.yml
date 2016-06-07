@@ -40,7 +40,7 @@ en:
     show:
       mock_details: Configuration details
     create:
-      msgsuccess: Mock created successfully! You can now send requests to #{1}
+      msgsuccess: Mock created successfully! You can now send requests to
   mongoid:
       models:
         mock: Mock
@@ -55,3 +55,6 @@ en:
           create: Create mock now!
   mime:
     json: application/json
+
+  error:
+    search_no_match: "Could not find matching mock for id: %{term}"
