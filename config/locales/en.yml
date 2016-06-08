@@ -27,7 +27,8 @@ en:
     home: "Home"
     contact: "Contact"
     about: "About"
-    enter_id: "Enter mock ID ..."
+    enter_id: Enter id to search ...
+    enter_id_help: Enter the partial or complete id of a mock to search for it. Partial id will only find a mock if the partial is unique.
     mock:
       detail: Detail
       detail_title: Show the details of this mock
