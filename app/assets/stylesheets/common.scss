@@ -16,9 +16,12 @@ body {
     padding: 0px;
     margin-top: 12px;
 
-    .form-group input {
-      height: 26px;
-      padding: 2px 6px;
+    .form-group {
+      div,
+      input {
+        height: 26px;
+        padding: 2px 6px;
+      }
     }
   }
 }

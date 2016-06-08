@@ -21,15 +21,18 @@
       </ul>
       <form action="<%= search_mocks_path %>" class="navbar-form navbar-right search" role="search" method="get">
         <div class="form-group">
-          <input
-            name="term"
-            type="text"
-            class="form-control"
-            placeholder="<%=t 'navbar.enter_id' %>"
-            title="<%=t 'navbar.enter_id_help' %>"
-            size="36"
-            value="<%= flash[:term] if flash[:term] %>"
-          >
+          <div class="input-group">
+            <div class="input-group-addon"><%= fa_icon 'search'%></div>
+            <input
+              name="term"
+              type="text"
+              class="form-control"
+              placeholder="<%=t 'navbar.enter_id' %>"
+              title="<%=t 'navbar.enter_id_help' %>"
+              size="36"
+              value="<%= flash[:term] if flash[:term] %>"
+            >
+          </div>
         </div>
       </form>
     </div><!--/.nav-collapse -->
