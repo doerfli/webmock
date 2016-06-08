@@ -30,8 +30,11 @@ en:
     enter_id: "Enter mock ID ..."
     mock:
       detail: Detail
+      detail_title: Show the details of this mock
       history: History
-      new: Create new
+      history_title: Show the request history of this mock
+      new: New mock
+      new_title: Create a new mock
   mocks:
     index:
       title: HTTP mocking made easy

@@ -14,9 +14,9 @@
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <% if (controller_name.eql? 'mocks') && action_name.in?( %w(show history)) %>
-            <li class="<%= 'active' if action_name.eql? 'show' %>"><%= link_to t('navbar.mock.detail'), mock_path(@mock) %></li>
-            <li class="<%= 'active' if action_name.eql? 'history' %>"><%= link_to t('navbar.mock.history'), history_mock_path(@mock) %></li>
-            <li ><%= link_to t('navbar.mock.new'), root_path %></li>
+            <li class="<%= 'active' if action_name.eql? 'show' %>"><%= link_to mock_path(@mock), :title => t('navbar.mock.detail_title') do %><%= fa_icon 'newspaper-o' %> <%=t 'navbar.mock.detail' %><% end %></li>
+            <li class="<%= 'active' if action_name.eql? 'history' %>"><%= link_to history_mock_path(@mock), :title => t('navbar.mock.history_title') do %><%= fa_icon 'history'%> <%=t 'navbar.mock.history' %><% end %></li>
+            <li ><%= link_to root_path, :title => t('navbar.mock.new_title') do %><%= fa_icon 'file-text-o'%> <%=t 'navbar.mock.new' %><% end %></li>
         <% end %>
       </ul>
       <form action="<%= search_mocks_path %>" class="navbar-form navbar-right search" role="search" method="get">
