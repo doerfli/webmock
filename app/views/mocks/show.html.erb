@@ -1,14 +1,18 @@
 <div class="container">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3 class="panel-title"><%=t '.mock_details' %></h3>
+      <h3 class="panel-title"><%=t '.mock_details' %> <small>( id: <%= @mock.id %> )</small></h3>
     </div>
     <div class="panel-body">
       <dl class="dl-horizontal">
         <dt><%=t '.mock_path' %></dt>
-        <dd><%= link_to(mocklink_url, mocklink_url(@mock), :target => '_blank') %></dd>
-        <dt><%=t '.mock_history' %></dt>
-        <dd><%= link_to(history_mock_url, history_mock_url(@mock)) %></dd>
+        <dd>
+          <%= link_to(mocklink_url, mocklink_url(@mock), :target => '_blank') %>
+          &nbsp;&nbsp;&nbsp;
+          ( <%= link_to history_mock_url(@mock), :title => 'History' do %><%= fa_icon 'history' %> <%=t 'navbar.mock.history' %><% end %> )
+        </dd>
+        <dt>&nbsp;</dt>
+        <dd>&nbsp;</dd>
         <dt><%=t Mock.human_attribute_name(:statuscode) %></dt>
         <dd><%= @mock.statuscode %></dd>
         <dt><%=t Mock.human_attribute_name(:contenttype) %></dt>
