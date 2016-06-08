@@ -53,6 +53,7 @@ class MocksController < ApplicationController
       redirect_to mock
     else
       flash[:alert_warning] = t('error.search_no_match', term: params[:term])
+      flash[:term] = params[:term]
       redirect_to root_url
     end
   end

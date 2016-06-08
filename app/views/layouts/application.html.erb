@@ -14,6 +14,9 @@
 
   <body>
     <%= render :partial => 'shared/navbar' %>
+
+    <%= yield :header %>
+
     <% if flash[:alert_success] %>
       <div class="container">
         <div class="alert alert-success" role="alert">
@@ -22,10 +25,26 @@
       </div>
     <% end %>
 
+    <% if flash[:alert_info] %>
+      <div class="container">
+        <div class="alert alert-info" role="alert">
+          <%= flash[:alert_info].html_safe %>
+        </div>
+      </div>
+    <% end %>
+
     <% if flash[:alert_warning] %>
       <div class="container">
         <div class="alert alert-warning" role="alert">
           <%= flash[:alert_warning].html_safe %>
+        </div>
+      </div>
+    <% end %>
+
+    <% if flash[:alert_error] %>
+      <div class="container">
+        <div class="alert alert-danger" role="alert">
+          <%= flash[:alert_error].html_safe %>
         </div>
       </div>
     <% end %>
