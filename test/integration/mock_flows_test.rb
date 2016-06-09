@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class MockFlowsTest < ActionDispatch::IntegrationTest
-  include FactoryGirl::Syntax::Methods
 
   test 'index page' do
     get '/'
