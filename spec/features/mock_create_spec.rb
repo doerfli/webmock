@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.feature "mock creation", :type => :feature do
+RSpec.feature "mock creation", :type => :feature, :js => true do
   scenario "User creates a new mock" do
     visit '/'
 
