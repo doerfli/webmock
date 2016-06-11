@@ -82,7 +82,7 @@ class MockFlowsTest < ActionDispatch::IntegrationTest
     assert_redirected_to root_path
   end
 
-  test 'mock history' do
+  test 'json history' do
     mock = create(:mock)
 
     get "/#{mock.id}"
@@ -103,7 +103,7 @@ class MockFlowsTest < ActionDispatch::IntegrationTest
     assert_nil f['query_params']
   end
 
-  test 'mock history 16 and more results' do
+  test 'json history with 16 and more results' do
     mock = create(:mock)
 
     16.times{
