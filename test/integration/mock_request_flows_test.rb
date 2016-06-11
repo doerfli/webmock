@@ -84,4 +84,23 @@ class MockRequestFlowsTest < ActionDispatch::IntegrationTest
     assert_nil r1.query_params
   end
 
-end
+  test 'mock request stores multiple incoming requests' do
+    mock = create(:mock, body: '{ "hello": "world" }', customheaders: [{ 'name': 'X-API-KEY', 'value':'12345678'}] )
+
+    get "/#{mock.id}?a=b"
+    assert_response :success
+
+    get "/#{mock.id}?a=b"
+    assert_response :success
+
+    m = Mock.find(mock.id)
+    assert_equal 2, m.mock_requests.size
+
+    get "/#{mock.id}?a=b"
+    assert_response :success
+
+    m = Mock.find(mock.id)
+    assert_equal 3, m.mock_requests.size
+  end
+
+  end
