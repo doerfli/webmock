@@ -7,11 +7,11 @@ When(/^I open the "([^"]*)" page$/) do |page|
   visit url
 end
 
-And(/^enter "([^"]*)" into the "([^"]*)" field$/) do |text,field|
+When(/^enter "([^"]*)" into the "([^"]*)" field$/) do |text,field|
   fill_in field, with: text
 end
 
-And(/^click "([^"]*)"$/) do |button_text|
+When(/^click "([^"]*)"$/) do |button_text|
   click_button button_text
 end
 
