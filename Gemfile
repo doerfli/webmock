@@ -52,6 +52,7 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'database_cleaner'
   gem 'factory_girl_rails', '~> 4.7'
+  gem 'simplecov'
 end
 
 group :development do
