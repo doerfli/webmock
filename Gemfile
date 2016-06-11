@@ -53,6 +53,8 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'factory_girl_rails', '~> 4.7'
   gem 'simplecov'
+  gem 'cucumber-rails', '~> 1.4', '>= 1.4.3'
+  gem 'rspec-expectations', '~> 3.4'
 end
 
 group :development do
