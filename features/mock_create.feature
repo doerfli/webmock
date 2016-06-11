@@ -1,5 +1,6 @@
 Feature: Mock
 
+  @javascript
   Scenario: Create a new mock
     When I open the "index" page
     And enter "{'hello':'world'}" into the "mock_body" field
