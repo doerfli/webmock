@@ -53,11 +53,11 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'factory_girl_rails', '~> 4.7'
   gem 'simplecov'
-  gem 'selenium-webdriver', '~> 2.53', '>= 2.53.1'
-  gem 'poltergeist', '~> 1.9'
   gem 'rspec', '~> 3.5.0.beta4'
   gem 'rspec-rails', '~> 3.5.0.beta4'
   gem 'rspec-expectations', '~> 3.5.0.beta4'
+  gem 'selenium-webdriver', '~> 2.53', '>= 2.53.1'
+  gem 'poltergeist', '~> 1.9'
 end
 
 group :development do

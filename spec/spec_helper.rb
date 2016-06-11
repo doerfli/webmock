@@ -97,3 +97,7 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 end
+
+require 'capybara/poltergeist'
+#Capybara.default_driver = :selenium
+Capybara.javascript_driver = :poltergeist
