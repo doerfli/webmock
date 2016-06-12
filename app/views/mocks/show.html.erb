@@ -7,7 +7,7 @@
       <dl class="dl-horizontal">
         <dt><%=t '.mock_path' %></dt>
         <dd>
-          <%= link_to(mocklink_url, mocklink_url(@mock), :target => '_blank') %>
+          <%= link_to(mocklink_url, mocklink_url(@mock), :target => '_blank', :id => 'mock_link') %>
           &nbsp;&nbsp;&nbsp;
           ( <%= link_to history_mock_url(@mock), :title => 'History' do %><%= fa_icon 'history' %> <%=t 'navbar.mock.history' %><% end %> )
         </dd>
