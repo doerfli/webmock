@@ -13,19 +13,22 @@
         </dd>
         <dt>&nbsp;</dt>
         <dd>&nbsp;</dd>
-        <dt><%=t Mock.human_attribute_name(:statuscode) %></dt>
+        <dt><%= Mock.human_attribute_name(:statuscode) %></dt>
         <dd><%= @mock.statuscode %></dd>
-        <dt><%=t Mock.human_attribute_name(:contenttype) %></dt>
+        <dt><%= Mock.human_attribute_name(:contenttype) %></dt>
         <dd><%= @mock.contenttype %></dd>
         <% unless @mock.customheaders.nil? %>
-          <dt><%=t Mock.human_attribute_name(:customheaders) %></dt>
+          <dt><%= Mock.human_attribute_name(:customheaders) %></dt>
           <dd>
             <% @mock.customheaders.each{ |h| %>
               <%= h[:name] %>: <%= h[:value] %><br/>
             <% } %>
           </dd>
         <% end %>
-        <dt><%=t Mock.human_attribute_name(:body) %></dt>
+        <dt>
+          <%= Mock.human_attribute_name(:body) %><br/>
+          <small>(<%= link_to raw_body_mock_url(@mock), :target => '_blank' do %><%=t '.raw' %><% end %>)</small>
+        </dt>
         <dd>
           <% if ! @mock.body.empty? %>
             <pre><%= html_escape(pretty_print_body(@mock.contenttype, @mock.body)) %></pre>

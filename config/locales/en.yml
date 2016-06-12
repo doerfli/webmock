@@ -43,6 +43,7 @@ en:
       reset: Reset
     show:
       mock_details: Configuration details
+      raw: Show raw
     create:
       msgsuccess: Mock created successfully! You can now send requests to
   mongoid:
@@ -53,6 +54,7 @@ en:
           statuscode: Status Code
           contenttyoe: Content-Type
           customheaders: Custom headers
+          body: Body
   helpers:
       submit:
         mock:

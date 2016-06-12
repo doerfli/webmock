@@ -23,6 +23,12 @@ class MocksController < ApplicationController
     @mock = Mock.find( id: params[:id])
   end
 
+  def raw_body
+    mock = Mock.find( id: params[:id])
+    response.content_type = 'text/plain'
+    render :text => mock.body
+  end
+
   def history
     @mock = Mock.find( id: params[:id])
 

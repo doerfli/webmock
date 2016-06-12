@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :mocks do
     member do
       get 'history'
+      get 'raw_body'
     end
     collection do
       get 'search'
