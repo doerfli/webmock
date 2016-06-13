@@ -39,7 +39,7 @@ class MockFlowsTest < ActionDispatch::IntegrationTest
   end
 
   test 'search mock partial' do
-    create(:mock)
+    mock = create(:mock)
 
     get '/mocks/search', params: {term: '87fb5727'}
     assert_response :redirect
@@ -54,7 +54,7 @@ class MockFlowsTest < ActionDispatch::IntegrationTest
 
   test 'search mock partial 2' do
     create(:mock)
-    create(:mock, id: '87fb5727-a49c-4390-ae38-c74180831d80')
+    mock2 = create(:mock, id: '87fb5727-a49c-4390-ae38-c74180831d80')
 
     get '/mocks/search', params: {term: 'a49c'}
     assert_response :redirect
