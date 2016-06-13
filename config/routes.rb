@@ -10,7 +10,11 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
-  resources :mock_requests
+  resources :mock_requests do
+    member do
+      get 'raw_body'
+    end
+  end
 
   root 'mocks#index'
 end

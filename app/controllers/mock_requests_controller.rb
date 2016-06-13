@@ -31,4 +31,10 @@ class MockRequestsController < ApplicationController
     render plain: mock.body, :status => mock.statuscode
   end
 
+  def raw_body
+    req = MockRequest.find( id: params[:id])
+    response.content_type = 'text/plain'
+    render :text => req.body
+  end
+
 end

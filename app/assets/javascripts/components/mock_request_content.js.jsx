@@ -106,7 +106,17 @@ var MRContent = React.createClass({
                 </div>
                 <div className="panel panel-default">
                     <div className="panel-heading">
-                        <h3 className="panel-title">Body</h3>
+                        <h3 className="panel-title">
+                            Body
+                            {(() => {
+                                if ( this.props.data.body != null && this.props.data.body.length > 0 ) {
+                                    var url = "/mock_requests/" + this.props.data._id.$oid + "/raw_body";
+                                    return (
+                                        <small>( <a href={url} target="_blank">Show raw</a> )</small>
+                                    )
+                                }
+                            })()}
+                        </h3>
                     </div>
                     <div className="body panel-body">
                         {(() => {
