@@ -1,5 +1,5 @@
 $(document).on('turbolinks:load', function() {
-    return $('#new_mock .ta_ct').select2({
+    $('#new_mock .ta_ct').select2({
         placeholder: 'Select an option',
         multiple: false,
         tags: true,
@@ -14,4 +14,17 @@ $(document).on('turbolinks:load', function() {
             }
         }
     });
+
+    console.log("loading channel");
+    App.mockChannel = App.cable.subscriptions.create({channel: "MockChannel", id: "123"},
+        {
+            received: function(data) {
+                console.log(data);
+                App.mockChannel.send({ sent_by: "bla1", body: "This is a cool chat app." })
+            }
+        });
+    setTimeout(function() {
+        App.mockChannel.send({ sent_by: "Paul", body: "This is a cool chat app." })
+    }, 2000);
+
 });

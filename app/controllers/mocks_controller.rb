@@ -57,6 +57,9 @@ class MocksController < ApplicationController
       }
     end
 
+    # MockChannel.broadcast_to("123", title: "hello world", body: "something new");
+    ActionCable.server.broadcast "123", {title: "hello world", body: "something new"}
+
     render plain: mock.body, :status => mock.statuscode
   end
 
