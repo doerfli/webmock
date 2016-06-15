@@ -10,23 +10,26 @@
       padding-top: 10px;
       display: inline;
     }
-    .refresh {
-      float: right;
-    }
     .timeline {
-      margin-top: 20px;
+      margin-top: 10px;
+
+      .request {
+        padding: 5px 5px;
+        border-top: 1px solid $table-bg-hover;
+        cursor: pointer;
+      }
+      .selected {
+        background-color: $table-bg-active;
+      }
+      .request:hover {
+        background-color: $table-bg-hover;
+      }
     }
-    .request {
-      padding: 5px 5px;
-      border-top: 1px solid $table-bg-hover;
-      cursor: pointer;
+    .explanation {
+      margin-top: 10px;
+      color: #777777;
     }
-    .selected {
-      background-color: $table-bg-active;
-    }
-    .request:hover {
-      background-color: $table-bg-hover;
-    }
+
   }
   .content {
     .panel {
