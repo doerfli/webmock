@@ -103,7 +103,6 @@ class MocksController < ApplicationController
       params.require(:mock).permit(:statuscode, :contenttype, :body, customheaders: [:name, :value])
     end
 
-    # TODO move this to mock_requests_controller when switching to websockets solution
     def latest_requests(mock, num = 16)
       mock.mock_requests.order_by(:created_at => 'desc').limit(num).map{|r|
         t = convert_mockreq_for_client r
