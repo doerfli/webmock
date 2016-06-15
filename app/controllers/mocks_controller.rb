@@ -58,7 +58,7 @@ class MocksController < ApplicationController
     end
 
     # MockChannel.broadcast_to("123", title: "hello world", body: "something new");
-    ActionCable.server.broadcast "123", {title: "hello world", body: "something new"}
+    ActionCable.server.broadcast "mock_#{mock.id}", convert_mockreq_for_client(mockreq)
 
     render plain: mock.body, :status => mock.statuscode
   end
@@ -106,25 +106,29 @@ class MocksController < ApplicationController
     # TODO move this to mock_requests_controller when switching to websockets solution
     def latest_requests(mock, num = 16)
       mock.mock_requests.order_by(:created_at => 'desc').limit(num).map{|r|
-        t = r.only_members(
-            :_id,
-            :method,
-            :url,
-            :query_params_as_text,
-            :created_at,
-            :remote_address,
-            :created_at_date,
-            :created_at_time,
-            :headers,
-            :contenttype,
-            :body,
-            :body_size,
-        )
-
-        t[:body] = pretty_print_body( t[:contenttype], t[:body])
+        t = convert_mockreq_for_client r
         logger.debug t
         t
       }
+    end
+
+    def convert_mockreq_for_client(r)
+      c = r.only_members(
+          :_id,
+          :method,
+          :url,
+          :query_params_as_text,
+          :created_at,
+          :remote_address,
+          :created_at_date,
+          :created_at_time,
+          :headers,
+          :contenttype,
+          :body,
+          :body_size,
+      )
+      c[:body] = pretty_print_body(c[:contenttype], c[:body])
+      c
     end
 
 end

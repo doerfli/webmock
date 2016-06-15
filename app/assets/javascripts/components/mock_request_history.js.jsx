@@ -1,9 +1,30 @@
 var MRHistory = React.createClass({
     getInitialState: function() {
+        this.initializeWebsocket();
         return {
             requests: this.props.data,
             current: this.props.data.length > 0 ? this.props.data[0] : {}
         };
+    },
+    initializeWebsocket: function() {
+        console.log("Initializing websocket for mock "+ this.props.mockid);
+        var comp = this;
+        App.mockChannel = App.cable.subscriptions.create({channel: "MockChannel", id: this.props.mockid},
+            {
+                received: function(req) {
+                    console.log(req);
+                    comp.addNewRequest(req);
+                }
+            }
+        );
+    },
+    addNewRequest: function(req) {
+        var new_requests = this.state.requests;
+        new_requests.unshift(req);
+        if ( new_requests.length > 16 ) {
+            new_requests.pop(); // remove last
+        }
+        this.setState({requests: new_requests});
     },
     getDefaultProps: function() {
         return {
@@ -13,16 +34,6 @@ var MRHistory = React.createClass({
     },
     handleRequestClick: function(event, i) {
         this.setState({current: this.state.requests[i]});
-    },
-    handleRefreshClick: function(event) {
-        $.ajax({
-            url: "/mocks/" + this.props.mockid + "/history.json",
-            dataType: 'json',
-            cache: false,
-            success: function(data) {
-                this.setState({requests: data, current: data[0]});
-            }.bind(this)
-        });
     },
     render: function() {
         if ( this.state.requests.length == 0) {
