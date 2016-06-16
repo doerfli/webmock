@@ -73,7 +73,7 @@ Rails.application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
-  config.action_cable.allowed_request_origins = %w(http://webmock.io http://*.webmock.io http://localhost:3000)
+  config.action_cable.allowed_request_origins = ['http://webmock.io', /http:\/\/[A-Za-z0-9_-]+.webmock.io/, 'http://localhost:3000', 'http://192.168.99.100:3000']
 
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
