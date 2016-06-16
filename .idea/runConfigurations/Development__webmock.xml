@@ -9,6 +9,7 @@
     <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
     <envs>
       <env name="DB_HOST" value="192.168.99.100:32768" />
+      <env name="CABLE_REDIS_HOST" value="redis://192.168.99.100:32777" />
     </envs>
     <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
     <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />

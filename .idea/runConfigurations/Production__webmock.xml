@@ -10,6 +10,8 @@
     <envs>
       <env name="SECRET_KEY_BASE" value="a3ceb286538ef650a32384cd915f737b608b2e4f27cd29a01b65433e09d4114f81e11c1f47d928d1f17efdc6713a10a5f5d0a384ffc151613f00d782106ffed5" />
       <env name="DB_HOST" value="192.168.99.100:32768" />
+      <env name="CABLE_REDIS_HOST" value="redis://192.168.99.100:32777" />
+      <env name="RAILS_SERVE_STATIC_FILES" value="true" />
     </envs>
     <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
     <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
@@ -22,7 +24,7 @@
     <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="PORT" VALUE="3000" />
     <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="IP" VALUE="0.0.0.0" />
     <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="DUMMY_APP" VALUE="test/dummy" />
-    <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RAILS_SERVER_TYPE" VALUE="passenger" />
+    <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RAILS_SERVER_TYPE" VALUE="puma" />
     <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ENVIRONMENT_TYPE" VALUE="production" />
     <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="LAUNCH_JS" VALUE="false" />
     <method />

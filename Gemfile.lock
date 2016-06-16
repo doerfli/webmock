@@ -191,6 +191,7 @@ GEM
       execjs
       rails (>= 3.2)
       tilt
+    redis (3.3.0)
     rspec (3.5.0.beta4)
       rspec-core (= 3.5.0.beta4)
       rspec-expectations (= 3.5.0.beta4)
@@ -287,6 +288,7 @@ DEPENDENCIES
   rails-assets-lodash (~> 4.13.0)!
   rails-controller-testing
   react-rails (~> 1.7, >= 1.7.1)
+  redis (~> 3.3)
   rspec (~> 3.5.0.beta4)
   rspec-expectations (~> 3.5.0.beta4)
   rspec-rails (~> 3.5.0.beta4)
