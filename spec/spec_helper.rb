@@ -106,4 +106,4 @@ end
 
 #Capybara.default_driver = :selenium
 Capybara.javascript_driver = :poltergeist
-Capybara.default_wait_time = 15
+Capybara.default_max_wait_time = 15

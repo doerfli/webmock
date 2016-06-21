@@ -41,6 +41,7 @@ RSpec.feature 'mock history', :type => :feature, :js => true do
     expect(page).to have_content 'Mock created successfully'
 
     3.times{ click_link 'mock_link' }
+    sleep 2
 
     click_link 'navbar_history'
 
