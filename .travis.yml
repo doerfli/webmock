@@ -6,5 +6,4 @@ services:
  - mongodb
 
 env:
- - RAILS_ENV=test
- - DB_HOST=localhost:27017
+ - RAILS_ENV=test DB_HOST=localhost:27017
