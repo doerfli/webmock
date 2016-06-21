@@ -1,4 +1,10 @@
 language: ruby
 rvm:
  - 2.3.1
+
+services:
+ - mongodb
+
+env:
+ - DB_HOST=localhost:27017
  
