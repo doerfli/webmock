@@ -1,8 +1,7 @@
-require 'test_helper'
+require 'rails_helper'
 
-class MockFlowsTest < ActionDispatch::IntegrationTest
-
-  test 'index page' do
+RSpec.describe 'index page', :type => :request do
+  it 'displays correctly' do
     get '/'
     assert_response :success
     assert assigns(:new_mock)
@@ -12,7 +11,7 @@ class MockFlowsTest < ActionDispatch::IntegrationTest
     assert_select '#mock_body', ''
   end
 
-  test 'create mock' do
+  it 'creates a new mock' do
     post '/mocks', params: {mock: {statuscode: 200, contenttype: 'application/json', body: '{ "some": "value"}'}}
     assert_response :redirect
     follow_redirect!
@@ -25,7 +24,7 @@ class MockFlowsTest < ActionDispatch::IntegrationTest
     assert_select '.panel-body dd', 'application/json'
   end
 
-  test 'search mock' do
+  it 'searches mock' do
     create(:mock)
 
     get '/mocks/search', params: {term: '87fb5727-0892-4962-af25-a157258bd54d'}
@@ -38,7 +37,7 @@ class MockFlowsTest < ActionDispatch::IntegrationTest
     assert_select '.panel-body dd', 'application/json'
   end
 
-  test 'search mock partial' do
+  it 'search mock partial' do
     mock = create(:mock)
 
     get '/mocks/search', params: {term: '87fb5727'}
@@ -52,7 +51,7 @@ class MockFlowsTest < ActionDispatch::IntegrationTest
     assert_select '.panel-body dd', 'application/json'
   end
 
-  test 'search mock partial 2' do
+  it 'search mock partial 2' do
     create(:mock)
     mock2 = create(:mock, id: '87fb5727-a49c-4390-ae38-c74180831d80')
 
@@ -67,7 +66,7 @@ class MockFlowsTest < ActionDispatch::IntegrationTest
     assert_select '.panel-body dd', 'application/json'
   end
 
-  test 'search mock partial no unique match' do
+  it 'search mock partial no unique match' do
     create(:mock)
     create(:mock, id: '87fb5727-0892-4962-af25-a157258bd54e')
 
@@ -75,14 +74,14 @@ class MockFlowsTest < ActionDispatch::IntegrationTest
     assert_redirected_to root_path
   end
 
-  test 'search mock no match' do
+  it 'search mock no match' do
     create(:mock)
 
     get '/mocks/search', params: {term: '87fb5728'}
     assert_redirected_to root_path
   end
 
-  test 'json history' do
+  it 'json history' do
     mock = create(:mock)
 
     get "/#{mock.id}"
@@ -103,7 +102,7 @@ class MockFlowsTest < ActionDispatch::IntegrationTest
     assert_nil f['query_params']
   end
 
-  test 'json history with 16 and more results' do
+  it 'json history with 16 and more results' do
     mock = create(:mock)
 
     16.times{
@@ -130,7 +129,6 @@ class MockFlowsTest < ActionDispatch::IntegrationTest
     assert_equal 16, history.size
 
     # make sure latest object is not the same
-    assert_not_equal f['_id'], history.first['_id']
+    expect(f['_id']).not_to eq(history.first['_id'])
   end
-
 end
