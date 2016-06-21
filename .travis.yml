@@ -7,3 +7,7 @@ services:
 
 env:
  - RAILS_ENV=test DB_HOST=localhost:27017
+
+before_install:
+  - "phantomjs --version"
+  
