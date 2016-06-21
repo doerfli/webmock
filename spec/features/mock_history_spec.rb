@@ -9,7 +9,8 @@ RSpec.feature 'mock history', :type => :feature, :js => true do
 
     expect(page).to have_content 'Mock created successfully'
 
-    click_link 'history'
+    click_link 'navbar_history'
+    page.save_screenshot "1.png"
 
     expect(page).to have_content 'No requests received yet'
   end
@@ -23,7 +24,7 @@ RSpec.feature 'mock history', :type => :feature, :js => true do
     expect(page).to have_content 'Mock created successfully'
 
     click_link 'mock_link'
-    click_link 'history'
+    click_link 'navbar_history'
 
     expect(page).to have_css('.history .content .general', text: 'GET')
     expect(page).to have_css('.history .content .general', text: 'http://127.0.0.1:')
@@ -42,7 +43,7 @@ RSpec.feature 'mock history', :type => :feature, :js => true do
 
     3.times{ click_link 'mock_link' }
 
-    click_link 'history'
+    click_link 'navbar_history'
 
     expect(page).to have_css('.history .timeline .request', text: 'GET', count: 3)
   end

@@ -7,7 +7,7 @@ var MRHistory = React.createClass({
         };
     },
     initializeWebsocket: function() {
-        console.log("Initializing websocket for mock "+ this.props.mockid);
+        //console.log("Initializing websocket for mock "+ this.props.mockid);
         var comp = this;
         App.mockChannel = App.cable.subscriptions.create({channel: "MockChannel", id: this.props.mockid},
             {
