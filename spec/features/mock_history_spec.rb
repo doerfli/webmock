@@ -10,7 +10,6 @@ RSpec.feature 'mock history', :type => :feature, :js => true do
     expect(page).to have_content 'Mock created successfully'
 
     click_link 'navbar_history'
-    page.save_screenshot "1.png"
 
     expect(page).to have_content 'No requests received yet'
   end
