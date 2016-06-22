@@ -56,13 +56,15 @@ RSpec.feature 'mock history', :type => :feature, :js => true do
     expect(page).to have_content 'No requests received yet'
     expect(page).to have_css('.history .timeline .request', text: 'GET', count: 0)
 
-    send_mock_request mock.id
-
+    send_mock_request mock.id, :get
     expect(page).to have_css('.history .timeline .request', text: 'GET', count: 1)
 
-    2.times{ send_mock_request mock.id }
-
+    2.times{ send_mock_request mock.id, :get }
     expect(page).to have_css('.history .timeline .request', text: 'GET', count: 3)
+
+    expect(page).to have_css('.history .timeline .request', text: 'POST', count: 0)
+    send_mock_request mock.id, :post
+    expect(page).to have_css('.history .timeline .request', text: 'POST', count: 1)
   end
 
 end
