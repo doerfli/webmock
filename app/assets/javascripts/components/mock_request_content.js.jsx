@@ -91,8 +91,9 @@ var MRContent = React.createClass({
                         </div>
                         {Object.keys(this.props.data.headers).map(function (key) {
                             var value = this.props.data.headers[key];
+                            var k = _.uniqueId();
                             return (
-                                <div className="row">
+                                <div className="row" key={k}>
                                     <div className="col-sm-4 key">
                                         {key}
                                     </div>
