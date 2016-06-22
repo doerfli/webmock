@@ -14,7 +14,7 @@ WORKDIR $HOME
 ADD Gemfile* $HOME/
 RUN gem update bundler
 RUN bundle config build.nokogiri --use-system-libraries
-RUN bundle install --without development test
+RUN bundle install --deployment --without development test
 
 # Add the app code
 ADD . $HOME
