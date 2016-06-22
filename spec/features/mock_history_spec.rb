@@ -47,4 +47,22 @@ RSpec.feature 'mock history', :type => :feature, :js => true do
 
     expect(page).to have_css('.history .timeline .request', text: 'GET', count: 3)
   end
+
+  scenario 'User creates a new mock, and history updates on request received' do
+    mock = create(:mock, body: '{ "hello": "world" }' )
+
+    visit "/mocks/#{mock.id}/history"
+
+    expect(page).to have_content 'No requests received yet'
+    expect(page).to have_css('.history .timeline .request', text: 'GET', count: 0)
+
+    send_mock_request mock.id
+
+    expect(page).to have_css('.history .timeline .request', text: 'GET', count: 1)
+
+    2.times{ send_mock_request mock.id }
+
+    expect(page).to have_css('.history .timeline .request', text: 'GET', count: 3)
+  end
+
 end
