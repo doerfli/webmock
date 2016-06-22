@@ -12,7 +12,7 @@ var MRHistory = React.createClass({
         App.mockChannel = App.cable.subscriptions.create({channel: "MockChannel", id: this.props.mockid},
             {
                 received: function(req) {
-                    console.log(req);
+                    // console.log(req);
                     comp.addNewRequest(req);
                 }
             }
@@ -24,7 +24,14 @@ var MRHistory = React.createClass({
         if ( new_requests.length > 16 ) {
             new_requests.pop(); // remove last
         }
-        this.setState({requests: new_requests});
+
+        var c = this.state.current;
+
+        if ( typeof c._id == 'undefined' ) {
+            c = new_requests[0];
+        }
+
+        this.setState({requests: new_requests, current: c});
     },
     getDefaultProps: function() {
         return {
