@@ -3,14 +3,14 @@ source 'https://rubygems.org'
 ruby '2.3.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '>= 5.0.0.rc1', '< 5.1'
+gem 'rails', '>= 5.0.0.rc2', '< 5.1'
 
 #gem 'mongoid', '~> 6.0'
 # TODO switch to stable once 6.0 available from https://github.com/mongodb/mongoid
 gem 'mongoid', git: 'https://github.com/mongodb/mongoid.git'
 
 # Use Puma as the app server
-gem 'puma', '~> 3.0'
+gem 'puma', '~> 3.4.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -32,9 +32,9 @@ gem 'redis', '~> 3.3'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
-gem 'font-awesome-rails', '~> 4.6.0.0'
-gem 'select2-rails', '~> 4.0', '>= 4.0.2'
-gem 'react-rails', '~> 1.7', '>= 1.7.1'
+gem 'font-awesome-rails', '~> 4.6.3.1'
+gem 'select2-rails', '~> 4.0'
+gem 'react-rails', '~> 1.7'
 #gem 'momentjs-rails', '~> 2.10.2'
 #gem 'browser', '~> 0.9.1'
 #gem 'uri-js-rails', '~> 1.14.1'
