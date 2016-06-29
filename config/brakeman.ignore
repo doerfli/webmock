@@ -1,0 +1,44 @@
+{
+  "ignored_warnings": [
+    {
+      "warning_type": "Cross Site Scripting",
+      "warning_code": 84,
+      "fingerprint": "724b2c4abaddc664435c46fa81cabe856c6ce626f49020509e1a74bdb7eb3635",
+      "message": "Unescaped model attribute rendered inline",
+      "file": "app/controllers/mock_requests_controller.rb",
+      "line": 6,
+      "link": "http://brakemanscanner.org/docs/warning_types/cross_site_scripting/",
+      "code": "render(text => MockRequest.find(:id => params[:id]).body, {})",
+      "render_path": null,
+      "location": {
+        "type": "method",
+        "class": "MockRequestsController",
+        "method": "raw_body"
+      },
+      "user_input": "MockRequest.find(:id => params[:id]).body",
+      "confidence": "Medium",
+      "note": ""
+    },
+    {
+      "warning_type": "Cross Site Scripting",
+      "warning_code": 84,
+      "fingerprint": "cd8719b40ddde2baf6f8247575b167406d271e4dce964c2f9eb8efcd7fd449a8",
+      "message": "Unescaped model attribute rendered inline",
+      "file": "app/controllers/mocks_controller.rb",
+      "line": 32,
+      "link": "http://brakemanscanner.org/docs/warning_types/cross_site_scripting/",
+      "code": "render(text => Mock.find(:id => params[:id]).body, {})",
+      "render_path": null,
+      "location": {
+        "type": "method",
+        "class": "MocksController",
+        "method": "raw_body"
+      },
+      "user_input": "Mock.find(:id => params[:id]).body",
+      "confidence": "Medium",
+      "note": ""
+    }
+  ],
+  "updated": "2016-06-29 23:19:00 +0200",
+  "brakeman_version": "3.3.2"
+}

@@ -71,5 +71,6 @@ group :development do
   gem 'binding_of_caller'
   gem 'letter_opener'
   gem 'passenger'
+  gem 'brakeman', '~> 3.3', '>= 3.3.2'
 end
 
