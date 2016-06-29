@@ -1,6 +1,7 @@
 var MRTimelineItem = React.createClass({
     render: function() {
-        var clsn = "request";
+        var clsn = "request ";
+        clsn += this.props.request.method;
         if ( this.props.isSelected == true ) {
             clsn += " selected";
         }

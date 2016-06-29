@@ -18,6 +18,32 @@
         border-top: 1px solid $table-bg-hover;
         cursor: pointer;
       }
+
+      .request.GET {
+        color: #0000cd;
+      }
+
+      .request.POST {
+        color: #00cd00;
+      }
+
+      .request.PUT {
+        color: #00cdcd;
+      }
+
+      .request.DELETE {
+        color: #cd0000;
+      }
+
+      .request.HEAD {
+        color: #cdcd00;
+      }
+
+      .request.OPTIONS {
+        color: #cd00cd;
+      }
+
+
       .selected {
         background-color: $table-bg-active;
       }
