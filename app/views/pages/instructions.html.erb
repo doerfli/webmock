@@ -6,22 +6,57 @@
     </div>
 <% end %>
 
-
-<div class="container">
-  <p>
-    To create a new webservice mock, go to the <%= link_to 'main page', root_path %>. On this page you are presented with
-    a form that is used to configured the response of the mock.
-    You should fill in at least the content of the body. Additionally you can change the status code of the response and
-    the content type.
-  </p>
-  <p>
-    Once you have filled in all fields, click the <i>Create mock now!</i> button and you are redirected to the mock
-    details page. On this page you can find the unique link to access the mocked service. It also shows the configuration
-    for this mock.
-  </p>
-  <p>
-    Next to the unique link for the mock webservice there is the link to the <i>history page</i>. The history page will show you
-    all the requests that were sent to the mock. It allows you to inspect each request in detail. The page is
-    live and will automatically update the moment a new request arrives.
-  </p>
+<div class="container instructions">
+  <div class="row">
+    <div class="col-md-4">
+      <p>
+        To create a new webservice mock, go to the <%= link_to 'main page', root_path %>. On this page you are presented with
+        a form that is used to configured the response of the mock.
+        You should fill in at least the content of the body. Additionally you can change the status code of the response and
+        the content type. Should you want to mock to include additional headers, then click on the <i>Add a custom header</i>
+        link at the bottom of the form. This will create a new line with name and value fields to configure a header.
+        This step can be repeated multiple times.
+      </p>
+      <p>
+        Once you have filled in all fields, click the <i>Create mock now!</i> button and you are redirected to the mock
+        details page.
+      </p>
+    </div>
+    <div class="col-md-8">
+      <%= image_tag 'mock_new' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <%= image_tag 'mock_details.jpg' %>
+    </div>
+    <div class="col-md-4">
+      <p>
+        On the mock details page you can find the unique link to access the mocked service and its history.
+      </p>
+      <p>
+        The page also shows the configuration details for this mock including the HTTP status code, content type and body.
+        If you have added custom headers they will also be shown on this page.
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <p>
+        The history page will show the latest 16 requests sent to the mocked webservice on the left hand side. On the
+        right hand side it shows the request content. Clicking on a request on the left hand side will
+        open it up and show its details on the right hand side.
+      </p>
+      <p>
+        The details of the request include generation information (method, URL, Source IP, Timestamp, ...), all headers
+        as well as the request body (except for GET requests).
+      </p>
+      <p>
+        The page is live and will automatically update the moment a new request arrives.
+      </p>
+    </div>
+    <div class="col-md-8">
+      <%= image_tag 'mock_history' %>
+    </div>
+  </div>
 </div>
