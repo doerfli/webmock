@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '2.3.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '>= 5.0.0.rc2', '< 5.1'
+gem 'rails', '>= 5.0.0', '< 5.1'
 
 #gem 'mongoid', '~> 6.0'
 # TODO switch to stable once 6.0 available from https://github.com/mongodb/mongoid
@@ -25,9 +25,9 @@ gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5.x'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
+gem 'jbuilder', '~> 2.5.0'
 # Use Redis adapter to run Action Cable in production
-gem 'redis', '~> 3.3'
+gem 'redis', '~> 3.3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -53,11 +53,11 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'factory_girl_rails', '~> 4.7'
   gem 'simplecov'
-  gem 'rspec', '~> 3.5.0.beta4'
-  gem 'rspec-rails', '~> 3.5.0.beta4'
-  gem 'rspec-expectations', '~> 3.5.0.beta4'
-  gem 'selenium-webdriver', '~> 2.53', '>= 2.53.1'
-  gem 'poltergeist', '~> 1.9'
+  gem 'rspec', '~> 3.5.0'
+  gem 'rspec-rails', '~> 3.5.0'
+  gem 'rspec-expectations', '~> 3.5.0'
+  gem 'selenium-webdriver', '~> 2.53.4'
+  gem 'poltergeist', '~> 1.10'
 end
 
 group :development do
