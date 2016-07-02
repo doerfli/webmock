@@ -16,6 +16,9 @@ Rails.application.routes.draw do
     end
   end
 
+  match '/instructions', to: 'pages#instructions', via: :get, as: 'instructions'
+  match '/faq', to: 'pages#faq', via: :get, as: 'faq'
+
   root 'mocks#index'
 end
 
