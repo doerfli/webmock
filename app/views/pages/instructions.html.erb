@@ -1,0 +1,27 @@
+<% content_for :header do %>
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Instructions</h1>
+      </div>
+    </div>
+<% end %>
+
+
+<div class="container">
+  <p>
+    To create a new webservice mock, go to the <%= link_to 'main page', root_path %>. On this page you are presented with
+    a form that is used to configured the response of the mock.
+    You should fill in at least the content of the body. Additionally you can change the status code of the response and
+    the content type.
+  </p>
+  <p>
+    Once you have filled in all fields, click the <i>Create mock now!</i> button and you are redirected to the mock
+    details page. On this page you can find the unique link to access the mocked service. It also shows the configuration
+    for this mock.
+  </p>
+  <p>
+    Next to the unique link for the mock webservice there is the link to the <i>history page</i>. The history page will show you
+    all the requests that were sent to the mock. It allows you to inspect each request in detail. The page is
+    live and will automatically update the moment a new request arrives.
+  </p>
+</div>
