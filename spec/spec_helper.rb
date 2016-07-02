@@ -101,10 +101,10 @@ end
 require 'capybara/poltergeist'
 
 Capybara.register_driver :poltergeist do |app|
-  Capybara::Poltergeist::Driver.new(app, { :js_errors => false, timeout: 15 })
+  Capybara::Poltergeist::Driver.new(app, { :js_errors => false, timeout: 20 })
 end
 
 #Capybara.default_driver = :selenium
 Capybara.javascript_driver = :poltergeist
-Capybara.default_max_wait_time = 15
+Capybara.default_max_wait_time = 20
 Capybara.server = :puma
