@@ -1,0 +1,64 @@
+<% content_for :header do %>
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Frequently asked questions</h1>
+      </div>
+    </div>
+<% end %>
+
+<div class="container faq">
+  <div class="row">
+    <div class="col-md-7">
+      <dl>
+        <dt>What is webmock.io?</dt>
+        <dd>
+          Webmock.io allows you to create HTTP endpoints with custom responses. Every mock will be assigned a unique link
+          that can be used to access it. All requests to this endpoint will be tracked and can be inspected on the
+          history page.
+        </dd>
+      </dl>
+      <dl>
+        <dt>
+          What is the target audience for webmock.io?
+        </dt>
+        <dd>
+          Webmock.io is geared towards software developers that need to mock HTTP webservices during development.
+        </dd>
+      </dl>
+      <dl>
+        <dt>
+          What content types does webmock.io support?
+        </dt>
+        <dd>
+          Webmock.io supports all content types. By default the form to creata new mock offers
+          application/json, application/xml, application/x-www-form-urlencoded, multipart/form-data, text/html, text/xml,
+          text/css, text/csv, text/plain. <br/>
+          If you need an additonal content type, just type it into the content type input field instead of choosing one
+          of the provided content types.
+        </dd>
+      </dl>
+      <dl>
+        <dt>How any mocks can i create?</dt>
+        <dd>Currently there is no limit to the number of mocks.</dd>
+      </dl>
+      <dl>
+        <dt>How long will a mock exist?</dt>
+        <dd>Currently there is no limit to the age of mocks. This might change in the future to reduce the amount of dead data. </dd>
+      </dl>
+      <dl>
+        <dt>How much does webmock.io cost?</dt>
+        <dd>The use of webmock.io is free of charge.</dd>
+      </dl>
+      <dl>
+        <dt>
+          How can i request a new feature or report a bug?
+        </dt>
+        <dd>
+          Please go to our <%= link_to 'github issue page', 'https://github.com/doerfli/webmock/issues', :target => '_blank' %>
+          and <%= link_to 'open a new issue', 'https://github.com/doerfli/webmock/issues/new', :target => '_blank' %> .
+        </dd>
+      </dl>
+    </div>
+    <div class="col-md-5">&nbsp;</div>
+  </div>
+</div>
