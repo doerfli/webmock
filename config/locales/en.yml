@@ -28,7 +28,9 @@ en:
     contact: "Contact"
     about: "About"
     instructions: Instructions
+    instructions_title: How to use webmock.io
     faq: FAQ
+    faq_title: Frequently asked questions
     enter_id: Enter id to search ...
     enter_id_help: Enter the partial or complete id of a mock to search for it. Partial id will only find a mock if the partial is unique.
     mock:
