@@ -40,15 +40,15 @@ RSpec.feature 'mock history', :type => :feature, :js => true do
 
     expect(page).to have_content 'Mock created successfully'
 
-    3.times{ click_link 'mock_link' }
-    sleep 2
+    mock = Mock.order( 'created_at DESC').first
+    3.times{ send_mock_request mock.id, :get }
 
     click_link 'navbar_history'
 
     expect(page).to have_css('.history .timeline .request', text: 'GET', count: 3)
   end
 
-  scenario 'User creates a new mock, and history updates on request received' do
+  scenario 'History updates on request received' do
     mock = create(:mock, body: '{ "hello": "world" }' )
 
     visit "/mocks/#{mock.id}/history"
