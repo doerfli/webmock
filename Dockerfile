@@ -1,7 +1,7 @@
 FROM ruby:2.3.1-alpine
 
 RUN apk update && apk upgrade && \
-    apk add --update nodejs git build-base libxml2-dev libxslt-dev tzdata && \
+    apk add --update nodejs git build-base libxml2 libxml2-dev libxml2-utils libxslt-dev tzdata && \
     rm -rf /var/cache/apk/*
 
 ENV HOME /webmock
@@ -13,7 +13,6 @@ WORKDIR $HOME
 # Install gems
 ADD Gemfile* $HOME/
 RUN gem update bundler
-RUN bundle config build.nokogiri --use-system-libraries
 RUN bundle install --deployment --without development test
 
 # Add the app code
