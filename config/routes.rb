@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       get 'raw_body'
     end
   end
+  resources :statistics
 
   match '/instructions', to: 'pages#instructions', via: :get, as: 'instructions'
   match '/faq', to: 'pages#faq', via: :get, as: 'faq'
