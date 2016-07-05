@@ -86,4 +86,7 @@ Rails.application.configure do
     logger.formatter = config.log_formatter
     config.logger = ActiveSupport::TaggedLogging.new(logger)
   end
+
+  # configure the Google Analytics tracker id via enviroment variable GA_TRACKER_ID
+  GA.tracker = ENV['GA_TRACKER_ID'] if ENV['GA_TRACKER_ID'].present?
 end

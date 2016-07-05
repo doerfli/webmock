@@ -7,6 +7,7 @@ RUN apk update && apk upgrade && \
 ENV HOME /webmock
 ENV RAILS_ENV production
 ENV DB_HOST mongo:27017
+ENV GA_TRACKER_ID UA-11111111-1
 
 WORKDIR $HOME
 

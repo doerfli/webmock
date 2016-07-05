@@ -12,6 +12,7 @@
       <env name="DB_HOST" value="192.168.99.100:32768" />
       <env name="CABLE_REDIS_HOST" value="redis://192.168.99.100:32777" />
       <env name="RAILS_SERVE_STATIC_FILES" value="true" />
+      <env name="GA_TRACKER_ID" value="UA-80298475-1" />
     </envs>
     <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
     <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
