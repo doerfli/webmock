@@ -6,9 +6,11 @@ class StatisticsController < ApplicationController
     @stats = {
         'new_mocks_today' => Mock.where( :created_at.gte => Date.today).size,
         'new_mocks_last_7_days' => Mock.where( :created_at.gte => ( Date.today - 7.days )).size,
+        'new_mocks_last_4_weeks' => Mock.where( :created_at.gte => ( Date.today - 4.weeks )).size,
         'total_mocks' => Mock.all.size,
         'total_mock_requests_today' => MockRequest.where( :created_at.gte => Date.today).size,
         'total_mock_requests_last_7_days' => MockRequest.where( :created_at.gte => ( Date.today - 7.days)).size,
+        'total_mock_requests_last_4_weeks' => MockRequest.where( :created_at.gte => ( Date.today - 4.weeks)).size,
         'total_mock_requests' => MockRequest.all.size,
     }
   end
