@@ -4,6 +4,8 @@ class Mock
 
   has_many :mock_requests, dependent: :destroy
 
+  before_destroy { |mock| mock.mock_requests.delete_all }
+
   field :statuscode, type: Numeric, default: "200"
   field :contenttype, type: String, default: "application/json"
   field :customheaders, type: Array

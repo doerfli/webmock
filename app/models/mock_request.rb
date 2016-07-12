@@ -3,7 +3,7 @@ class MockRequest
   include Mongoid::Timestamps
   include InstanceOps
 
-  belongs_to :mock, dependent: :destroy
+  belongs_to :mock, dependent: :nullify
 
   field :remote_address, type: String
   field :method, type: String

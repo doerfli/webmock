@@ -72,6 +72,13 @@ class MocksController < ApplicationController
     end
   end
 
+  def destroy
+    mock = Mock.find( id: params[:id])
+    mock.destroy
+
+    redirect_to root_url
+  end
+
   def search
     mock = nil
 

@@ -37,6 +37,7 @@ en:
       detail: Detail
       detail_title: Show the details of this mock
       history: History
+      delete: Delete
       history_title: Show the request history of this mock
       new: New mock
       new_title: Create a new mock
