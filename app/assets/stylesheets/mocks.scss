@@ -4,6 +4,15 @@
   }
 }
 
+.details {
+  h3 {
+    display: inline;
+  }
+  .actions {
+    float: right;
+  }
+}
+
 .history {
   .timeline_outer {
     > h3 {
