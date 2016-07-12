@@ -4,6 +4,7 @@ class MocksController < ApplicationController
 
   # no CSRF checks on #show
   skip_before_action :verify_authenticity_token, :only => [:replay]
+  rescue_from Mongoid::Errors::DocumentNotFound, :with => :document_not_found_method
 
   helper_method :latest_requests
 
@@ -101,6 +102,12 @@ class MocksController < ApplicationController
       flash[:alert_warning] = t('error.search_no_match', term: params[:term])
       flash[:term] = params[:term]
       redirect_to root_url
+    end
+  end
+
+  def document_not_found_method(exception)
+    respond_to do |type|
+      type.all  { render :text => "Blimey - we did not find the mock you were looking for (id: '#{exception.params[0][:id]}')", :status => 404 }
     end
   end
 
