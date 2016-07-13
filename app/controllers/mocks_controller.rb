@@ -15,11 +15,11 @@ class MocksController < ApplicationController
     @mocks = Mock.all
 
     if Mock.created_last_hour(session.id).size > 60 and ! session.has_key?(:verified_human)
+      logger.warn "session #{session.id} created more than 60 mocks in the last hour and needs to be verified to be human"
       session[:to_be_verified] = true
     else
       session[:to_be_verified] = false
     end
-    logger.debug "Mocks created in this session: #{}"
   end
 
   def create
@@ -27,6 +27,7 @@ class MocksController < ApplicationController
       if verify_recaptcha
         session[:verified_human] = true
       else
+        logger.warn 'reCAPTCHA verification failed'
         flash[:alert_error] = 'Could not verify CAPTCHA. Please try again.'
         redirect_to root_url and return
       end
