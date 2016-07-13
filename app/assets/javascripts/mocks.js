@@ -18,30 +18,31 @@ $(document).on('turbolinks:load', function() {
             }
         });
 
+        // enable drag and drop upload if File API is available
         if (window.File && window.FileList && window.FileReader) {
-            var fileselect = document.getElementById("fileselect");
+            var fileselect = document.getElementById("mock_fileselect");
             var filedrag = document.getElementById("filedrag");
 
             // file select
-            fileselect.addEventListener("change", FileSelectHandler, false);
+            fileselect.addEventListener("change", fileSelectHandler, false);
 
             // is XHR2 available?
             var xhr = new XMLHttpRequest();
             if (xhr.upload) {
 
                 // file drop
-                filedrag.addEventListener("dragover", FileDragHover, false);
-                filedrag.addEventListener("dragleave", FileDragHover, false);
-                filedrag.addEventListener("drop", FileSelectHandler, false);
+                filedrag.addEventListener("dragover", fileDragHover, false);
+                filedrag.addEventListener("dragleave", fileDragHover, false);
+                filedrag.addEventListener("drop", fileSelectHandler, false);
                 filedrag.style.display = "block";
                 fileselect.style.display = "none";
             }
         }
 
-        function FileSelectHandler(e) {
+        function fileSelectHandler(e) {
 
             // cancel event and hover styling
-            FileDragHover(e);
+            fileDragHover(e);
 
             // fetch FileList object
             var files = e.target.files || e.dataTransfer.files;
@@ -50,22 +51,21 @@ $(document).on('turbolinks:load', function() {
             for (var i = 0, f; f = files[i]; i++) {
                 var reader = new FileReader();
                 reader.onload = function(e) {
-                    // Output(
-                    //     "<p><strong>" + file.name + ":</strong></p><pre>" +
-                    //     e.target.result.replace(/</g, "&lt;").replace(/>/g, "&gt;") +
-                    //     "</pre>"
-                    // );
                     $("#mock_body").text(e.target.result);
-                }
+                };
                 reader.readAsText(f);
             }
 
         }
 
-        function FileDragHover(e) {
+        function fileDragHover(e) {
             e.stopPropagation();
             e.preventDefault();
-            e.target.className = (e.type == "dragover" ? "hover" : "");
+            if ( e.type == "dragover" ) {
+                $(e.target).addClass("hover");
+            } else {
+                $(e.target).removeClass("hover");
+            }
         }
     }
 

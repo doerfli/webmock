@@ -35,8 +35,12 @@
           </div>
           <div class="row">
             <div class="col-md-10">
-              <input type="file" id="fileselect" name="fileselect[]" />
-              <div id="filedrag">Drop file here</div>
+              <div class="form-group">
+                <%= f.file_field :fileselect %>
+                <div id="filedrag" class="form-control">
+                  <%= fa_icon 'cloud-upload' %>&nbsp;&nbsp;&nbsp;Drop a file here to upload content
+                </div>
+              </div>
             </div>
             <div class="col-md-2">
             </div>
