@@ -1,7 +1,7 @@
 $(document).on('turbolinks:load', function() {
     var new_mock = $('#new_mock');
-
-    if ( new_mock != null ) {
+    
+    if ( new_mock.length > 0 ) {
         new_mock.find('.ta_ct').select2({
             placeholder: 'Select an option',
             multiple: false,
@@ -34,7 +34,7 @@ $(document).on('turbolinks:load', function() {
                 filedrag.addEventListener("dragover", fileDragHover, false);
                 filedrag.addEventListener("dragleave", fileDragHover, false);
                 filedrag.addEventListener("drop", fileSelectHandler, false);
-                filedrag.style.display = "block";
+                filedrag.style.display = "inline-block";
                 fileselect.style.display = "none";
             }
         }

@@ -8,6 +8,8 @@
     display: none;
     text-align: center;
     border: 1px dashed #ccc;
+    height: $input-height-large * 2;
+    padding-top: $input-height-large / 2;
   }
 
   #filedrag.hover

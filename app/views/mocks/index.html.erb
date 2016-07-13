@@ -20,6 +20,13 @@
                 <%= f.text_area :body, class: 'form-control', cols: 50, rows: 10 %><br />
               </div>
 
+              <%= react_component 'CustomHeaders' %>
+
+              <div>
+                <%= f.submit :class => 'btn btn-primary' %>
+                <%= link_to t('.reset'), root_path, { :class => 'btn btn-default' } %>
+              </div>
+
             </div>
             <div class="col-md-2">
               <div class="form-group">
@@ -31,27 +38,16 @@
                 <%= f.label :contenttype %>:
                 <%= f.select :contenttype, Mock::MIME_TYPES, {}, { class: 'form-control ta_ct'} %><br />
               </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-10">
+
               <div class="form-group">
                 <%= f.file_field :fileselect %>
                 <div id="filedrag" class="form-control">
-                  <%= fa_icon 'cloud-upload' %>&nbsp;&nbsp;&nbsp;Drop a file here to upload content
+                  <!--<span class="text">-->
+                    <%= fa_icon 'cloud-upload' %>&nbsp;&nbsp;&nbsp;Drop a file here to upload content
+                  <!--</span>-->
                 </div>
               </div>
             </div>
-            <div class="col-md-2">
-            </div>
-          </div>
-          <%= react_component 'CustomHeaders' %>
-          <div class="row">
-            <div class="col-md-10">
-              <%= f.submit :class => 'btn btn-primary' %>
-              <%= link_to t('.reset'), root_path, { :class => 'btn btn-default' } %>
-            </div>
-            <div class="col-md-2">&nbsp;</div>
           </div>
     <% end %>
     </div>
