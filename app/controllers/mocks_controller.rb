@@ -1,6 +1,8 @@
-class MocksController < ApplicationController
+require 'recaptcha/rails'
 
+class MocksController < ApplicationController
   include ApplicationHelper
+  include Recaptcha::ClientHelper
 
   # no CSRF checks on #show
   skip_before_action :verify_authenticity_token, :only => [:replay]
@@ -11,12 +13,29 @@ class MocksController < ApplicationController
   def index
     @new_mock = Mock.new
     @mocks = Mock.all
+
+    if Mock.created_last_hour(session.id).size > 60 and ! session.has_key?(:verified_human)
+      session[:to_be_verified] = true
+    else
+      session[:to_be_verified] = false
+    end
+    logger.debug "Mocks created in this session: #{}"
   end
 
   def create
+    if session[:to_be_verified]
+      if verify_recaptcha
+        session[:verified_human] = true
+      else
+        flash[:alert_error] = 'Could not verify CAPTCHA. Please try again.'
+        redirect_to root_url and return
+      end
+    end
+
     mock = Mock.new(mock_params)
     mock.id = SecureRandom.uuid
     mock.remove_empty_headers
+    mock.created_by_session = session.id
     mock.save
 
     flash[:alert_success] = "#{t('.msgsuccess')} #{view_context.link_to(mocklink_url(mock), mocklink_url(mock), { :target => '_blank'})}"

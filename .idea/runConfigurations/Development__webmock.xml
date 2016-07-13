@@ -10,6 +10,8 @@
     <envs>
       <env name="DB_HOST" value="192.168.99.100:32768" />
       <env name="CABLE_REDIS_HOST" value="redis://192.168.99.100:32777" />
+      <env name="RECAPTCHA_PUBLIC_KEY" value="6LdyBiUTAAAAAKEvp2VdCL7QOZSinv9zsbAsrUdw" />
+      <env name="RECAPTCHA_PRIVATE_KEY" value="6LdyBiUTAAAAAAWO2o9_dApWp8USOlNXNLnCaW2a" />
     </envs>
     <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
     <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />

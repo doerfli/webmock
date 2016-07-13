@@ -42,6 +42,7 @@ gem 'react-rails', '~> 1.7'
 #gem 'quiet_assets'
 gem 'rails-assets-lodash', '~> 4.13.0', source: 'https://rails-assets.org'
 gem 'google-analytics-rails', '~> 1.1'
+gem 'recaptcha', '~> 3.3'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

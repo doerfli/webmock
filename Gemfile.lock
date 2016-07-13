@@ -189,6 +189,8 @@ GEM
       execjs
       railties (>= 3.2)
       tilt
+    recaptcha (3.3.0)
+      json
     redis (3.3.0)
     rspec (3.5.0)
       rspec-core (~> 3.5.0)
@@ -288,6 +290,7 @@ DEPENDENCIES
   rails-assets-lodash (~> 4.13.0)!
   rails-controller-testing
   react-rails (~> 1.7)
+  recaptcha (~> 3.3)
   redis (~> 3.3.0)
   rspec (~> 3.5.0)
   rspec-expectations (~> 3.5.0)

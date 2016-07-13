@@ -3,8 +3,7 @@
     cursor: pointer;
   }
 
-  #filedrag
-  {
+  #filedrag {
     display: none;
     text-align: center;
     border: 1px dashed #ccc;
@@ -12,10 +11,13 @@
     padding-top: $input-height-large / 2;
   }
 
-  #filedrag.hover
-  {
+  #filedrag.hover {
     background-color: #ddd;
     border-style: solid;
+  }
+
+  .g-recaptcha {
+    margin-bottom: 20px;
   }
 }
 

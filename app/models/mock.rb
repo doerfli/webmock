@@ -10,10 +10,13 @@ class Mock
   field :contenttype, type: String, default: "application/json"
   field :customheaders, type: Array
   field :body, type: String, default: ''
+  field :created_by_session, type: String
 
   validates :statuscode, presence: true
   validates_numericality_of :statuscode, greater_than_or_equal_to: 100, less_than: 600
   validates :contenttype, presence: true
+
+  scope :created_last_hour, ->(session) { where(created_by_session: session, :created_at.gte => Time.now - 1.hour)}
 
   MIME_TYPES = %w(
       application/json
