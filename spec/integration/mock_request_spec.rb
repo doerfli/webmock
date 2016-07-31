@@ -103,4 +103,26 @@ RSpec.describe 'mock responses', :type => :request do
     assert_equal 3, m.mock_requests.size
   end
 
+  it 'responds to mock request with delay' do
+    delay = 3
+    mock = create(:mock, body: '{ "hello": "3seconds" }', delay: delay)
+    b = Time.now
+    get "/#{mock.id}"
+    e = Time.now
+    assert_response :success
+    assert_equal '{ "hello": "3seconds" }', response.body
+    expect(e-b).to be >= delay
+  end
+
+  xit 'responds to mock request with long delay' do  # disabled as it takes loooooong
+    delay = 35
+    mock = create(:mock, body: '{ "hello": "35seconds" }', delay: delay)
+    b = Time.now
+    get "/#{mock.id}"
+    e = Time.now
+    assert_response :success
+    assert_equal '{ "hello": "35seconds" }', response.body
+    expect(e-b).to be >= delay
+  end
+
 end
