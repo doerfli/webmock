@@ -60,6 +60,7 @@ en:
           contenttyoe: Content-Type
           customheaders: Custom headers
           body: Body
+          delay: Delay (sec)
   helpers:
       submit:
         mock:

@@ -37,6 +37,7 @@ class MocksController < ApplicationController
     mock.id = SecureRandom.uuid
     mock.remove_empty_headers
     mock.created_by_session = session.id
+    mock.delay = nil if mock.delay.empty?
     mock.save
 
     flash[:alert_success] = "#{t('.msgsuccess')} #{view_context.link_to(mocklink_url(mock), mocklink_url(mock), { :target => '_blank'})}"
@@ -55,6 +56,12 @@ class MocksController < ApplicationController
 
   def replay
     mock = Mock.find( id: params[:id])
+
+    unless mock.delay.nil?
+      # delaying execition of mock by x seconds
+      logger.debug "delaying replay by #{mock.delay} seconds"
+      sleep(mock.delay.to_i)
+    end
 
     mockreq = MockRequest.new(
         remote_address: request.remote_ip,
@@ -133,7 +140,7 @@ class MocksController < ApplicationController
   private
 
     def mock_params
-      params.require(:mock).permit(:statuscode, :contenttype, :body, customheaders: [:name, :value])
+      params.require(:mock).permit(:statuscode, :contenttype, :body, :delay, customheaders: [:name, :value])
     end
 
     def latest_requests(mock, num = 16)

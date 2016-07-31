@@ -44,6 +44,11 @@
               </div>
 
               <div class="form-group">
+                <%= f.label :delay %>:
+                <%= f.text_field :delay, type: 'number', class: 'form-control' %><br />
+              </div>
+
+              <div class="form-group">
                 <%= f.file_field :fileselect %>
                 <div id="filedrag" class="form-control">
                   <!--<span class="text">-->

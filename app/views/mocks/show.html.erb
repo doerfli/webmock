@@ -23,6 +23,10 @@
         <dd><%= @mock.statuscode %></dd>
         <dt><%= Mock.human_attribute_name(:contenttype) %></dt>
         <dd><%= @mock.contenttype %></dd>
+        <% unless @mock.delay.nil? %>
+          <dt><%= Mock.human_attribute_name(:delay) %></dt>
+          <dd><%= @mock.delay %></dd>
+        <% end %>
         <% unless @mock.customheaders.nil? %>
           <dt><%= Mock.human_attribute_name(:customheaders) %></dt>
           <dd>
