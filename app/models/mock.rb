@@ -4,6 +4,7 @@ class Mock
 
   has_many :mock_requests, dependent: :destroy
 
+  before_validation { |mock| normalize_blank_values mock }
   before_destroy { |mock| mock.mock_requests.delete_all }
 
   field :statuscode, type: Numeric, default: "200"
@@ -32,12 +33,20 @@ class Mock
       text/plain
   )
 
-  def remove_empty_headers
-    return if self.customheaders.nil?
-    self.customheaders = self.customheaders.select{ |x| true if !( x[:name].nil? ) && ! ( x[:name].eql?('') ) && ! ( x[:value].nil? ) && ! ( x[:value].eql?('') ) }
-  end
 
   def body_pp
     body_pretty_print
+  end
+
+  def normalize_blank_values(mock)
+    mock.delay = nil if ! ( mock.delay.nil? ) && mock.delay.empty?
+    mock.charset = nil if ! ( mock.charset.nil? ) && mock.charset.empty?
+    remove_empty_headers mock
+  end
+
+  def remove_empty_headers( mock)
+    return if mock.customheaders.nil?
+    mock.customheaders = mock.customheaders.select{ |x| true if !( x[:name].nil? ) && ! ( x[:name].eql?('') ) && ! ( x[:value].nil? ) && ! ( x[:value].eql?('') ) }
+    mock.customheaders = nil if mock.customheaders.size == 0
   end
 end

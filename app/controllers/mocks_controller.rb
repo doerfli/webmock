@@ -35,10 +35,7 @@ class MocksController < ApplicationController
 
     mock = Mock.new(mock_params)
     mock.id = SecureRandom.uuid
-    mock.remove_empty_headers
     mock.created_by_session = session.id
-    mock.delay = nil if ! ( mock.delay.nil? ) && mock.delay.empty?
-    mock.charset = nil if ! ( mock.charset.nil? ) && mock.charset.empty?
     mock.save
 
     flash[:alert_success] = "#{t('.msgsuccess')} #{view_context.link_to(mocklink_url(mock), mocklink_url(mock), { :target => '_blank'})}"
