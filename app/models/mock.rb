@@ -39,7 +39,7 @@ class Mock
   end
 
   def normalize_blank_values(mock)
-    mock.delay = nil if ! ( mock.delay.nil? ) && mock.delay.empty?
+    mock.delay = nil if ! ( mock.delay.nil? ) && mock.delay == 0
     mock.charset = nil if ! ( mock.charset.nil? ) && mock.charset.empty?
     remove_empty_headers mock
   end
