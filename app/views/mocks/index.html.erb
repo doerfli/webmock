@@ -20,7 +20,7 @@
                 <%= f.text_area :body, class: 'form-control', cols: 50, rows: 10 %><br />
               </div>
 
-              <%= react_component 'CustomHeaders' %>
+              <%= react_component 'AdvancedConfig' %>
 
               <% if session[:to_be_verified] %>
                 <%= recaptcha_tags %>
@@ -41,11 +41,6 @@
               <div class="form-group">
                 <%= f.label :contenttype %>:
                 <%= f.select :contenttype, Mock::MIME_TYPES, {}, { class: 'form-control ta_ct'} %><br />
-              </div>
-
-              <div class="form-group">
-                <%= f.label :delay %>:
-                <%= f.text_field :delay, type: 'number', class: 'form-control' %><br />
               </div>
 
               <div class="form-group">

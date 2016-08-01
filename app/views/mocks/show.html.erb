@@ -24,6 +24,10 @@
         <dt><%= Mock.human_attribute_name(:contenttype) %></dt>
         <dd><%= @mock.contenttype %></dd>
         <% unless @mock.delay.nil? %>
+          <dt><%= Mock.human_attribute_name(:charset) %></dt>
+          <dd><%= @mock.charset %></dd>
+        <% end %>
+        <% unless @mock.delay.nil? %>
           <dt><%= Mock.human_attribute_name(:delay) %></dt>
           <dd><%= @mock.delay %></dd>
         <% end %>

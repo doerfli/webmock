@@ -38,6 +38,7 @@ class MocksController < ApplicationController
     mock.remove_empty_headers
     mock.created_by_session = session.id
     mock.delay = nil if ! ( mock.delay.nil? ) && mock.delay.empty?
+    mock.charset = nil if ! ( mock.charset.nil? ) && mock.charset.empty?
     mock.save
 
     flash[:alert_success] = "#{t('.msgsuccess')} #{view_context.link_to(mocklink_url(mock), mocklink_url(mock), { :target => '_blank'})}"
@@ -78,6 +79,7 @@ class MocksController < ApplicationController
     mockreq.save
 
     response.content_type = mock.contenttype
+    response.charset = mock.charset unless mock.charset.nil?
 
     unless mock.customheaders.nil?
       mock.customheaders.each{ |h|
@@ -140,7 +142,7 @@ class MocksController < ApplicationController
   private
 
     def mock_params
-      params.require(:mock).permit(:statuscode, :contenttype, :body, :delay, customheaders: [:name, :value])
+      params.require(:mock).permit(:statuscode, :contenttype, :body, :delay, :charset, customheaders: [:name, :value])
     end
 
     def latest_requests(mock, num = 16)

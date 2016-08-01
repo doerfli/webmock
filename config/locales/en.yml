@@ -61,6 +61,7 @@ en:
           customheaders: Custom headers
           body: Body
           delay: Delay (sec)
+          charset: Charset
   helpers:
       submit:
         mock:
