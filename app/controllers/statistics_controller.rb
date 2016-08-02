@@ -14,7 +14,8 @@ class StatisticsController < ApplicationController
         'total_mock_requests' => MockRequest.all.size,
     }
 
-    @popular_mocks = Mock.by_requests_size.created_today.order("mock_requests_count DESC").limit(10)
+    @popular_mocks_today = Mock.by_requests_size.created_today.order('mock_requests_count DESC').limit(100)
+    @popular_mocks_last_week = Mock.by_requests_size.created_last_week.order('mock_requests_count DESC').limit(100)
   end
 
 end
