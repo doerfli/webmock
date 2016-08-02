@@ -1,6 +1,7 @@
 class Mock
   include Mongoid::Document
   include Mongoid::Timestamps
+  include TimeScopes
 
   has_many :mock_requests, dependent: :destroy
 
@@ -11,12 +12,14 @@ class Mock
   field :customheaders, type: Array
   field :body, type: String, default: ''
   field :created_by_session, type: String
+  field :mock_requests_count, type: Fixnum, default: 0
 
   validates :statuscode, presence: true
   validates_numericality_of :statuscode, greater_than_or_equal_to: 100, less_than: 600
   validates :contenttype, presence: true
 
   scope :created_last_hour, ->(session) { where(created_by_session: session, :created_at.gte => Time.now - 1.hour)}
+  scope :by_requests_size, -> { order(requests_count: :desc) }
 
   MIME_TYPES = %w(
       application/json

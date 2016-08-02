@@ -2,8 +2,9 @@ class MockRequest
   include Mongoid::Document
   include Mongoid::Timestamps
   include InstanceOps
+  include TimeScopes
 
-  belongs_to :mock, dependent: :nullify
+  belongs_to :mock, dependent: :nullify, counter_cache: true
 
   field :remote_address, type: String
   field :method, type: String
