@@ -102,10 +102,10 @@ RSpec.describe 'index page', :type => :request do
     assert_nil f['query_params']
   end
 
-  it 'json history with 16 and more results' do
+  it 'json history with 50 and more results' do
     mock = create(:mock)
 
-    16.times{
+    50.times{
       get "/#{mock.id}"
       assert_response :success
     }
@@ -114,7 +114,7 @@ RSpec.describe 'index page', :type => :request do
     assert_response :success
 
     history = JSON.parse(@response.body)
-    assert_equal 16, history.size
+    assert_equal 50, history.size
     f = history.first
 
     # add one more request
@@ -126,7 +126,7 @@ RSpec.describe 'index page', :type => :request do
     assert_response :success
 
     history = JSON.parse(@response.body)
-    assert_equal 16, history.size
+    assert_equal 50, history.size
 
     # make sure latest object is not the same
     expect(f['_id']).not_to eq(history.first['_id'])
