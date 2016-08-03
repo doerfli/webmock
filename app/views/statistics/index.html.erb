@@ -7,6 +7,7 @@
 <% end %>
 
 <div class="container">
+  <h3>General</h3>
   <table class="table table-striped">
     <thead>
       <tr>
@@ -21,6 +22,46 @@
           <td><%= value %></td>
         </tr>
       <% } %>
+    </tbody>
+  </table>
+
+  <h3>Popular mocks today</h3>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th># req</th>
+      <th># ips</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @popular_mocks_today.each do |mock| %>
+        <tr>
+          <td><%= link_to mock.id, mock %></td>
+          <td><%= mock.mock_requests_count %></td>
+          <td><%= mock.mock_requests.map{ |r| r.remote_address }.uniq.size %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+  <h3>Popular mocks last week</h3>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th># req</th>
+      <th># ips</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @popular_mocks_last_week.each do |mock| %>
+        <tr>
+          <td><%= link_to mock.id, mock %></td>
+          <td><%= mock.mock_requests_count %></td>
+          <td><%= mock.mock_requests.map{ |r| r.remote_address }.uniq.size %></td>
+        </tr>
+    <% end %>
     </tbody>
   </table>
 </div>

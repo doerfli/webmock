@@ -95,7 +95,7 @@ class MocksController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.json { render :json => latest_requests(@mock, 16) }
+      format.json { render :json => latest_requests(@mock, 50) }
     end
   end
 
