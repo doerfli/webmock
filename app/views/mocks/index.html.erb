@@ -12,7 +12,7 @@
       <h3 class="panel-title"><%=t '.subtitle' %></h3>
     </div>
     <div class="panel-body">
-      <%= form_for @new_mock, url: mocks_url, html: { class: 'new_mock' } do |f| %>
+      <%= form_for @new_mock, url: mocks_url, method: 'post', html: { class: 'new_mock' } do |f| %>
           <div class="row">
             <div class="col-md-10">
               <div class="form-group">
