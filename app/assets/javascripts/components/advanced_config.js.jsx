@@ -3,7 +3,7 @@ var AdvancedConfig = React.createClass({
         return {
             new_mock: this.props.new_mock,
             enabled: this.props.new_mock.created_at != null,
-            numHeaders: this.props.new_mock.created_at == null ? 0 : this.props.new_mock.customheaders.length,
+            numHeaders: this.props.new_mock.created_at == null || this.props.new_mock.customheaders == null ? 0 : this.props.new_mock.customheaders.length,
         };
     },
     getDefaultProps: function() {
