@@ -1,8 +1,9 @@
 var AdvancedConfig = React.createClass({
     getInitialState: function() {
         return {
-            enabled: false,
-            numHeaders: 0
+            new_mock: this.props.new_mock,
+            enabled: this.props.new_mock.created_at != null,
+            numHeaders: this.props.new_mock.created_at == null ? 0 : this.props.new_mock.customheaders.length,
         };
     },
     getDefaultProps: function() {
@@ -36,13 +37,19 @@ var AdvancedConfig = React.createClass({
                         <div className="col-md-6">
                             <div className="form-group">
                                 <label>Charset</label>
-                                <input className="form-control" type="text" name="mock[charset]" defaultValue="UTF-8"/>
+                                <input className="form-control"
+                                       type="text"
+                                       name="mock[charset]"
+                                       defaultValue={this.state.new_mock.charset || 'UTF-8'} />
                             </div>
                         </div>
                         <div className="col-md-6">
                             <div className="form-group">
                                 <label>Delay (seconds)</label>
-                                <input className="form-control" type="number" name="mock[delay]" defaultValue="0"/>
+                                <input className="form-control"
+                                       type="number"
+                                       name="mock[delay]"
+                                       defaultValue={this.state.new_mock.delay || '0'}/>
                             </div>
                         </div>
                     </div>
@@ -51,12 +58,20 @@ var AdvancedConfig = React.createClass({
                         <div className="row" key={i}>
                             <div className="col-md-5">
                                 <div className="form-group">
-                                    <input className="form-control" type="text" name="mock[customheaders][][name]" placeholder="Header name ..."/>
+                                    <input className="form-control"
+                                           type="text"
+                                           name="mock[customheaders][][name]"
+                                           placeholder="Header name ..."
+                                           defaultValue={this.state.new_mock.customheaders && this.state.new_mock.customheaders[i].name || ''}/>
                                 </div>
                             </div>
                             <div className="col-md-7">
                                 <div className="form-group">
-                                    <input className="form-control" type="text" name="mock[customheaders][][value]" placeholder="Value ..."/>
+                                    <input className="form-control"
+                                           type="text"
+                                           name="mock[customheaders][][value]"
+                                           placeholder="Value ..."
+                                           defaultValue={this.state.new_mock.customheaders && this.state.new_mock.customheaders[i].value || ''}/>
                                 </div>
                             </div>
                         </div>

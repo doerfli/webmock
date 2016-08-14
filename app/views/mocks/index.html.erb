@@ -20,7 +20,7 @@
                 <%= f.text_area :body, class: 'form-control', cols: 50, rows: 10 %><br />
               </div>
 
-              <%= react_component 'AdvancedConfig' %>
+              <%= react_component 'AdvancedConfig', { new_mock: @new_mock } %>
 
               <% if session[:to_be_verified] %>
                 <%= recaptcha_tags %>
