@@ -1,5 +1,5 @@
 $(document).on('turbolinks:load', function() {
-    var new_mock = $('#new_mock');
+    var new_mock = $('.new_mock');
     
     if ( new_mock.length > 0 ) {
         new_mock.find('.ta_ct').select2({

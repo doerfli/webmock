@@ -12,7 +12,7 @@ class MocksController < ApplicationController
 
   def index
     @new_mock = Mock.new
-    @mocks = Mock.all
+    @new_mock = Mock.find( id: params[:clone]) if params[:clone]
 
     if Mock.created_last_hour(session.id).size > 60 and ! session.has_key?(:verified_human)
       logger.warn "session #{session.id} created more than 60 mocks in the last hour and needs to be verified to be human"
