@@ -1,4 +1,5 @@
 class MRTimeline extends React.Component {
+
     render() {
         return (
             <div className="timeline">
@@ -9,4 +10,5 @@ class MRTimeline extends React.Component {
             </div>
         )
     }
+
 }

@@ -1,4 +1,5 @@
 class MRTimelineItem extends React.Component {
+
     render() {
         let clsn = "request ";
         clsn += this.props.request.method;
@@ -11,4 +12,5 @@ class MRTimelineItem extends React.Component {
             </div>
         );
     }
+
 }

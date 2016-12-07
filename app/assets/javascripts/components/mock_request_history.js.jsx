@@ -1,24 +1,32 @@
-var MRHistory = React.createClass({
-    getInitialState: function() {
+class MRHistory extends React.Component {
+
+    constructor(props) {
+        super(props);
         this.initializeWebsocket();
-        return {
+        this.state = {
             requests: this.props.data,
             current: this.props.data.length > 0 ? this.props.data[0] : {}
         };
-    },
-    initializeWebsocket: function() {
-        //console.log("Initializing websocket for mock "+ this.props.mockid);
+
+        this.addNewRequest = this.addNewRequest.bind(this)
+        this.handleRequestClick = this.handleRequestClick.bind(this)
+    }
+
+    initializeWebsocket() {
+        // console.log("Initializing websocket for mock "+ this.props.mockid);
         var comp = this;
         App.mockChannel = App.cable.subscriptions.create({channel: "MockChannel", id: this.props.mockid},
             {
                 received: function(req) {
+                    // console.log("received");
                     // console.log(req);
                     comp.addNewRequest(req);
                 }
             }
         );
-    },
-    addNewRequest: function(req) {
+    }
+
+    addNewRequest(req) {
         var new_requests = this.state.requests;
         new_requests.unshift(req);
         if ( new_requests.length > 16 ) {
@@ -32,17 +40,14 @@ var MRHistory = React.createClass({
         }
 
         this.setState({requests: new_requests, current: c});
-    },
-    getDefaultProps: function() {
-        return {
-            requests: [],
-            current: {}
-        };
-    },
-    handleRequestClick: function(event, i) {
+    }
+
+    handleRequestClick(event, i) {
+        console.log(this.state);
         this.setState({current: this.state.requests[i]});
-    },
-    render: function() {
+    }
+
+    render() {
         if ( this.state.requests.length == 0) {
             return (
                 <div className="history">
@@ -88,5 +93,10 @@ var MRHistory = React.createClass({
         }
 
     }
-});
+}
+
+// MRHistory.defaultProps = {
+//     requests: [],
+//     current: {}
+// };
 
