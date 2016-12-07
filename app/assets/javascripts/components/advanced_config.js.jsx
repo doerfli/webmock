@@ -1,24 +1,26 @@
-var AdvancedConfig = React.createClass({
-    getInitialState: function() {
-        return {
+class AdvancedConfig extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
             new_mock: this.props.new_mock,
             enabled: this.props.new_mock.created_at != null,
             numHeaders: this.props.new_mock.created_at == null || this.props.new_mock.customheaders == null ? 0 : this.props.new_mock.customheaders.length,
         };
-    },
-    getDefaultProps: function() {
-        return {
-            enabled: false,
-            numHeaders: 0
-        };
-    },
-    enableAdvanced: function() {
+
+        this.enableAdvanced = this.enableAdvanced.bind(this)
+        this.increaseHeaders = this.increaseHeaders.bind(this)
+    }
+
+    enableAdvanced() {
         this.setState({enabled: true, numHeaders: this.state.numHeaders + 1});
-    },
-    increaseHeaders: function() {
+    }
+
+    increaseHeaders() {
         this.setState({numHeaders: this.state.numHeaders + 1});
-    },
-    render: function() {
+    }
+
+    render() {
         if ( ! this.state.enabled ) {
             return (
                 <span>
@@ -85,4 +87,4 @@ var AdvancedConfig = React.createClass({
             )
         }
     }
-});
+}
