@@ -5,10 +5,10 @@ ruby '2.3.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '>= 5.0.0', '< 5.1'
 
-gem 'mongoid', '~> 6.0.0.rc0'
+gem 'mongoid', '~> 6.0.3'
 
 # Use Puma as the app server
-gem 'puma', '~> 3.6.0'
+gem 'puma', '~> 3.6.2'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -30,7 +30,7 @@ gem 'redis', '~> 3.3.0'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
-gem 'font-awesome-rails', '~> 4.6.3.1'
+gem 'font-awesome-rails', '~> 4.7.0.0'
 gem 'select2-rails', '~> 4.0'
 gem 'react-rails', '~> 1.8'
 #gem 'momentjs-rails', '~> 2.10.2'
@@ -38,7 +38,7 @@ gem 'react-rails', '~> 1.8'
 #gem 'uri-js-rails', '~> 1.14.1'
 #gem 'handlebars_assets', '~>0.23.0'
 #gem 'quiet_assets'
-gem 'rails-assets-lodash', '~> 4.14.0', source: 'https://rails-assets.org'
+gem 'rails-assets-lodash', '~> 4.17.0', source: 'https://rails-assets.org'
 gem 'google-analytics-rails', '~> 1.1'
 gem 'recaptcha', '~> 3.3'
 
@@ -55,8 +55,8 @@ group :development, :test do
   gem 'rspec', '~> 3.5.0'
   gem 'rspec-rails', '~> 3.5.0'
   gem 'rspec-expectations', '~> 3.5.0'
-  gem 'selenium-webdriver', '~> 2.53.4'
-  gem 'poltergeist', '~> 1.10'
+  gem 'selenium-webdriver', '~> 3.0.3'
+  gem 'poltergeist', '~> 1.12'
 end
 
 group :development do
