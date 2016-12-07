@@ -1,5 +1,6 @@
-var MRContent = React.createClass({
-    render: function() {
+class MRContent extends React.Component {
+
+    render() {
         return (
             <div className="content">
                 <div className="panel panel-default">
@@ -140,4 +141,5 @@ var MRContent = React.createClass({
             </div>
         )
     }
-});
+
+}
