@@ -7,9 +7,6 @@ class MRHistory extends React.Component {
             requests: this.props.data,
             current: this.props.data.length > 0 ? this.props.data[0] : {}
         };
-
-        this.addNewRequest = this.addNewRequest.bind(this)
-        this.handleRequestClick = this.handleRequestClick.bind(this)
     }
 
     initializeWebsocket() {
@@ -26,7 +23,7 @@ class MRHistory extends React.Component {
         );
     }
 
-    addNewRequest(req) {
+    addNewRequest = (req) => {
         var new_requests = this.state.requests;
         new_requests.unshift(req);
         if ( new_requests.length > 16 ) {
@@ -42,7 +39,7 @@ class MRHistory extends React.Component {
         this.setState({requests: new_requests, current: c});
     }
 
-    handleRequestClick(event, i) {
+    handleRequestClick = (event, i) => {
         console.log(this.state);
         this.setState({current: this.state.requests[i]});
     }

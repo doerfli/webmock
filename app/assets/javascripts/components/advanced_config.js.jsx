@@ -7,16 +7,13 @@ class AdvancedConfig extends React.Component {
             enabled: this.props.new_mock.created_at != null,
             numHeaders: this.props.new_mock.created_at == null || this.props.new_mock.customheaders == null ? 0 : this.props.new_mock.customheaders.length,
         };
-
-        this.enableAdvanced = this.enableAdvanced.bind(this)
-        this.increaseHeaders = this.increaseHeaders.bind(this)
     }
 
-    enableAdvanced() {
+    enableAdvanced = () => {
         this.setState({enabled: true, numHeaders: this.state.numHeaders + 1});
     }
 
-    increaseHeaders() {
+    increaseHeaders = () => {
         this.setState({numHeaders: this.state.numHeaders + 1});
     }
 
