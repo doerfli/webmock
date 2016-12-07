@@ -1,6 +1,4 @@
-[![Build Status](https://travis-ci.org/doerfli/webmock.svg?branch=master)](https://travis-ci.org/doerfli/webmock)
-
-[![Dependency Status](https://dependencyci.com/github/doerfli/webmock/badge)](https://dependencyci.com/github/doerfli/webmock)
+[![Build Status](https://travis-ci.org/doerfli/webmock.svg?branch=master)](https://travis-ci.org/doerfli/webmock) [![Dependency Status](https://dependencyci.com/github/doerfli/webmock/badge)](https://dependencyci.com/github/doerfli/webmock)
 
 # What's webmock?
 
