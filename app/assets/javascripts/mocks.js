@@ -29,7 +29,6 @@ $(document).on('turbolinks:load', function() {
             // is XHR2 available?
             var xhr = new XMLHttpRequest();
             if (xhr.upload) {
-
                 // file drop
                 filedrag.addEventListener("dragover", fileDragHover, false);
                 filedrag.addEventListener("dragleave", fileDragHover, false);
