@@ -95,7 +95,6 @@ RSpec.describe 'index page', :type => :request do
     f = history.first
     assert_equal '127.0.0.1', f['remote_address']
     assert_equal 'GET', f['method']
-    assert_equal 'application/x-www-form-urlencoded', f['contenttype']
     assert_equal '', f['body']
     assert_equal 0, f['body_size']
     assert_equal "http://www.example.com/#{mock.id}", f['url']

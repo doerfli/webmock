@@ -57,7 +57,6 @@ RSpec.describe 'mock responses', :type => :request do
     r1 = m.mock_requests.first
     assert_equal '127.0.0.1', r1.remote_address
     assert_equal 'GET', r1.method
-    assert_equal 'application/x-www-form-urlencoded', r1.contenttype
     assert_equal '', r1.body
     assert_equal 0, r1.body_size
     assert_equal "http://www.example.com/#{mock.id}?a=b", r1.url
