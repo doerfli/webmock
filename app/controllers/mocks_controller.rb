@@ -56,7 +56,7 @@ class MocksController < ApplicationController
     mock = Mock.find( id: params[:id])
 
     unless mock.delay.nil?
-      # delaying execition of mock by x seconds
+      # delaying execution of mock by x seconds
       logger.debug "delaying replay by #{mock.delay} seconds"
       sleep(mock.delay.to_i)
     end
