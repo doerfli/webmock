@@ -4,6 +4,7 @@ services:
     image: nginx-proxy
     ports:
     - 80:80
+    - 443:443
     links:
     - webmock:webmock
     depends_on:
