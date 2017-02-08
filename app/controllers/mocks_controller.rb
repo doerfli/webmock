@@ -29,7 +29,7 @@ class MocksController < ApplicationController
       else
         logger.warn 'reCAPTCHA verification failed'
         flash[:alert_error] = 'Could not verify CAPTCHA. Please try again.'
-        redirect_to root_url and return
+        redirect_to root_path and return
       end
     end
 
@@ -103,7 +103,7 @@ class MocksController < ApplicationController
     mock = Mock.find( id: params[:id])
     mock.destroy
 
-    redirect_to root_url
+    redirect_to root_path
   end
 
   def search
@@ -127,13 +127,13 @@ class MocksController < ApplicationController
     else
       flash[:alert_warning] = t('error.search_no_match', term: params[:term])
       flash[:term] = params[:term]
-      redirect_to root_url
+      redirect_to root_path
     end
   end
 
   def document_not_found(exception)
     flash[:alert_error] = "Blimey - we searched the farthest corners of our database, but a mock with id '#{exception.params[0][:id]}' does not exist"
-    redirect_to root_url
+    redirect_to root_path
   end
 
   private
