@@ -26,7 +26,7 @@ class MRHistory extends React.Component {
     addNewRequest = (req) => {
         var new_requests = this.state.requests;
         new_requests.unshift(req);
-        if ( new_requests.length > 16 ) {
+        if ( new_requests.length > 50 ) {
             new_requests.pop(); // remove last
         }
 

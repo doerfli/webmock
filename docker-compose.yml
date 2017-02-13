@@ -1,0 +1,23 @@
+version: '2'
+services:
+  nginx-proxy:
+    image: nginx-proxy
+    ports:
+    - 80:80
+    - 443:443
+    links:
+    - webmock:webmock
+    depends_on:
+    - webmock
+  webmock:
+    build: .
+    links:
+    - mongo:mongo
+    - redis:redis
+    depends_on:
+    - mongo
+    - redis
+  mongo:
+    image: mongo
+  redis:
+    image: redis

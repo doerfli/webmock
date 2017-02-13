@@ -4,13 +4,13 @@
       <h3 class="panel-title"><%=t '.mock_details' %> <small>( id: <%= @mock.id %> )</small></h3>
       <div class="actions">
         <span>
-          <%= link_to history_mock_url(@mock), :title => 'Show history of this mock' do %><%= fa_icon 'history' %> <%=t 'navbar.mock.history' %><% end %>
+          <%= link_to history_mock_path(@mock), :title => 'Show history of this mock' do %><%= fa_icon 'history' %> <%=t 'navbar.mock.history' %><% end %>
         </span>
         <span>
-          <%= link_to root_url( :clone => @mock.id), :title => 'Clone this mock' do %><%= fa_icon 'clone' %> <%=t '.clone' %><% end %>
+          <%= link_to root_path( :clone => @mock.id), :title => 'Clone this mock' do %><%= fa_icon 'clone' %> <%=t '.clone' %><% end %>
         </span>
         <span>
-          <%= link_to mock_url(@mock), :method => :DELETE, :title => 'Delete this mock' do %><%= fa_icon 'trash' %> <%=t 'navbar.mock.delete' %><% end %>
+          <%= link_to @mock, :method => :DELETE, :title => 'Delete this mock' do %><%= fa_icon 'trash' %> <%=t 'navbar.mock.delete' %><% end %>
         </span>
       </div>
     </div>
@@ -44,7 +44,7 @@
         <% end %>
         <dt>
           <%= Mock.human_attribute_name(:body) %><br/>
-          <small>(<%= link_to raw_body_mock_url(@mock), :target => '_blank' do %><%=t '.raw' %><% end %>)</small>
+          <small>(<%= link_to raw_body_mock_path(@mock), :target => '_blank' do %><%=t '.raw' %><% end %>)</small>
         </dt>
         <dd>
           <% if ! @mock.body.empty? %>
