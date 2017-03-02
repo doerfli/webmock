@@ -3,12 +3,12 @@ source 'https://rubygems.org'
 ruby '2.4.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '>= 5.0.1', '< 5.1'
+gem 'rails', '>= 5.0.2', '< 5.1'
 
 gem 'mongoid', '~> 6.1.0'
 
 # Use Puma as the app server
-gem 'puma', '~> 3.6.2'
+gem 'puma', '~> 3.7.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -32,7 +32,7 @@ gem 'redis', '~> 3.3.0'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'font-awesome-rails', '~> 4.7.0.0'
 gem 'select2-rails', '~> 4.0'
-gem 'react-rails', '~> 1.8'
+gem 'react-rails', '~> 1.10'
 #gem 'momentjs-rails', '~> 2.10.2'
 #gem 'browser', '~> 0.9.1'
 #gem 'uri-js-rails', '~> 1.14.1'
