@@ -1,4 +1,4 @@
-FROM ruby:2.4.0-alpine
+FROM ruby:2.4.1-alpine
 
 RUN apk update && apk upgrade && \
     apk add --update nodejs git build-base libxml2 libxml2-dev libxml2-utils libxslt-dev tzdata && \
